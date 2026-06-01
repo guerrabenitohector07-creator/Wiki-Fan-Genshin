@@ -1,0 +1,284 @@
+/* ==========================================================================
+   RESET Y BASE
+   ========================================================================== */
+:root {
+    --fondo: url("Web/Simbolos/Fondo/Irminsul.webp");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    background: var(--fondo) center/cover no-repeat fixed;
+    color: #e2e8f0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 80px;
+}
+
+/* Overlay oscuro */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(25, 20, 45, 0.65);
+    z-index: -1;
+}
+
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 40px;
+    background: rgba(10, 15, 30, 0.575);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icono_genshin {
+    height: 45px;
+}
+
+.sub-logo {
+    color: #cfd8ff;
+}
+
+/* ==========================================================================
+   CONTENIDO PRINCIPAL
+   ========================================================================== */
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* HEADER */
+.wiki-page-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.char-title {
+    font-size: 40px;
+    color: white;
+}
+
+/* ==========================================================================
+   TARJETA (INFOBOX)
+   ========================================================================== */
+.sidebar-area {
+    width: 100%;
+    max-width: 650px;
+}
+
+.info-card {
+    background: linear-gradient(180deg, #1b223a, #0f1428);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* HEADERS */
+.card-header-main,
+.card-section-title {
+    background: rgba(255,255,255,0.08);
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   TABS
+   ========================================================================== */
+.card-media-tabs {
+    display: flex;
+    background: rgba(255,255,255,0.03);
+}
+
+.tab-btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    cursor: pointer;
+    color: #9fb4ff;
+    transition: 0.25s;
+}
+
+.tab-btn:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.tab-btn.active {
+    color: #4da3ff;
+    border-bottom: 2px solid #4da3ff;
+}
+
+.tab-link {
+    text-decoration: none;
+    color: #6aa9ff;
+}
+
+.tab-link:hover {
+    text-decoration: underline;
+    color: #9ecbff;
+}
+
+/* ==========================================================================
+   IMAGEN / MEDIA
+   ========================================================================== */
+.card-image-wrapper {
+    position: relative;
+}
+
+.media-content {
+    display: none;
+}
+
+.media-content.active {
+    display: block;
+}
+
+.char-art-placeholder {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #2b2f45, #0b0f20);
+    position: relative;
+}
+
+.art-avatar {
+    font-size: 70px;
+    opacity: 0.6;
+}
+
+/* COPYRIGHT */
+.copyright-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+}
+
+/* BOTÓN EXPANDIR */
+.expand-icon-placeholder {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   INFO GRID
+   ========================================================================== */
+.card-dual-row {
+    display: flex;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.dual-cell {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    align-items: center;      /* ← centra horizontalmente */
+    text-align: center;       /* ← centra texto */
+}
+
+.border-left {
+    border-left: 1px solid rgba(255,255,255,0.08);
+}
+
+/* TEXTOS */
+.cell-label {
+    font-size: 13px;
+    color: #9aa4c7;
+}
+
+.central-label {
+    text-align: center;
+}
+
+.cell-value {
+    font-size: 15px;
+    color: white;
+}
+
+.text-link {
+    color: #6aa9ff;
+    cursor: pointer;
+}
+
+/* ICONOS */
+.icono_pq {
+    height: 18px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* ELEMENTO */
+.vision-element {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* ← centra dentro del flex */
+    gap: 6px;
+}
+
+/* ESTRELLAS */
+.stars {
+    color: gold;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .char-title {
+        font-size: 28px;
+    }
+
+    .card-dual-row {
+        flex-direction: column;
+    }
+
+    .border-left {
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+}

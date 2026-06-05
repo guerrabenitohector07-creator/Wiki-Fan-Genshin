@@ -149,8 +149,7 @@
 
                             <h3 class="subsection-heading">Talentos</h3>
                             
-                            <!-- Ataque Normal -->
-                            <div class="talento">
+                            <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
                                         <img src="Simbolos/Talentos/Reiji/Ataque.png">
@@ -161,15 +160,49 @@
                                     </div>
                                 </div>
 
-                                <div class="talento-contenido">
-                                    <p><b>Ataque Normal:</b> Realiza hasta 5 ataques rápidos.</p><br>
-                                    <p><b>Ataque Cargado:</b> Consume Aguante de manera constante para realizar golpes de lanza cruzados continuos. Cuando termina el Ataque Cargado, hará un golpe aún más poderoso.</p><br>
-                                    <p><b>Ataque Descendente:</b> Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.</p><br>
+                                <!-- Botones para cambiar entre Descripción y Estadísticas -->
+                                <div class="talento-tabs">
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-ataque')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-ataque')">Estadísticas</button>
+                                </div>
+
+                                <!-- Contenido de las Pestañas -->
+                                <div class="talento-content">
+                                    <!-- Vista por Defecto: Descripción -->
+                                    <div id="desc-ataque" class="tab-panel active">
+                                            <p><b>Ataque Normal:</b> Realiza hasta 5 ataques rápidos.</p><br>
+                                        <p><b>Ataque Cargado:</b> Consume Aguante de manera constante para realizar golpes de lanza cruzados continuos. Cuando termina el Ataque Cargado, hará un golpe aún más poderoso.</p><br>
+                                        <p><b>Ataque Descendente:</b> Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.</p><br>
+                                    </div>
+
+                                    <!-- Vista Oculta: Estadísticas -->
+                                    <div id="stats-ataque" class="tab-panel">
+                                        <table class="stats-table">
+                                            <thead>
+                                            <tr>
+                                                <th>Atributo</th>
+                                                <th>Niv. 1</th>
+                                                <th>Niv. 10</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>Daño de 1er Golpe</td>
+                                                <td>48.2%</td>
+                                                <td>95.4%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Daño de Carga</td>
+                                                <td>110%</td>
+                                                <td>220%</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- Habilidad Elemental -->
-                            <div class="talento">
+                            <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
                                         <img src="Simbolos/Talentos/Reiji/Elemental.png">
@@ -180,15 +213,44 @@
                                     </div>
                                 </div>
 
-                                <div class="talento-contenido">
-                                    <p>Reiji concentra el poder Hydro en su lanza y desata una Ola del Juramento, manifestando su voluntad de proteger el campo de batalla:</p>
-                                    <p><b>Pulsar:</b> Reiji realiza una estocada frontal que libera una Ola del Juramento hacia delante, infligiendo Daño Hydro a los enemigos alcanzados. Si en las cercanías hay más enemigos, la Ola del Juramento rebotará en ellos y les infligirá Daño Hydro. Cada enemigo solo podrá ser fijado como objetivo una vez por cada vez que se use “Juramento del Guardián”. Si la Ola del Juramento entra en contacto con un Muro de Coral, rebota una vez más, ampliando su alcance y aumentando su daño. La ola también empuja ligeramente a los enemigos golpeados.</p>
-                                    <p><b>Mantener:</b> Reiji adopta una postura de puntería, canalizando el flujo Hydro para dirigir una Ola del Juramento de mayor tamaño en la dirección elegida. La Ola del Juramento inflige Daño Hydro continuo a los enemigos en su trayectoria y los empuja hacia atrás al impactar. Al mismo tiempo, Reiji convoca una armadura Hydro alrededor de Reiji, otorgándoles la Armadura de la Voluntad durante 20 segundos. La cantidad de absorción de daño del escudo es proporcional a la DEF Máx. de Reiji y restaura una pequeña cantidad de su Vida equivalente al 5% de la DEF de Reiji; este efecto puede activarse una vez cada 5 segundos.</p>
+                                <!-- Botones para cambiar entre Descripción y Estadísticas -->
+                                <div class="talento-tabs">
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-elemental')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-elemental')">Estadísticas</button>
+                                </div>
+
+                                <!-- Contenido de las Pestañas -->
+                                <div class="talento-content">
+                                    <!-- Vista por Defecto: Descripción -->
+                                    <div id="desc-elemental" class="tab-panel active">
+                                            <p>Reiji concentra el poder Hydro en su lanza y desata una Ola del Juramento, manifestando su voluntad de proteger el campo de batalla:</p>
+                                        <p><b>Pulsar:</b> Reiji realiza una estocada frontal que libera una Ola del Juramento hacia delante, infligiendo Daño Hydro a los enemigos alcanzados. Si en las cercanías hay más enemigos, la Ola del Juramento rebotará en ellos y les infligirá Daño Hydro. Cada enemigo solo podrá ser fijado como objetivo una vez por cada vez que se use “Juramento del Guardián”. Si la Ola del Juramento entra en contacto con un Muro de Coral, rebota una vez más, ampliando su alcance y aumentando su daño. La ola también empuja ligeramente a los enemigos golpeados.</p>
+                                        <p><b>Mantener:</b> Reiji adopta una postura de puntería, canalizando el flujo Hydro para dirigir una Ola del Juramento de mayor tamaño en la dirección elegida. La Ola del Juramento inflige Daño Hydro continuo a los enemigos en su trayectoria y los empuja hacia atrás al impactar. Al mismo tiempo, Reiji convoca una armadura Hydro alrededor de Reiji, otorgándoles la Armadura de la Voluntad durante 20 segundos. La cantidad de absorción de daño del escudo es proporcional a la DEF Máx. de Reiji y restaura una pequeña cantidad de su Vida equivalente al 5% de la DEF de Reiji; este efecto puede activarse una vez cada 5 segundos.</p>
+                                    </div>
+
+                                    <!-- Vista Oculta: Estadísticas -->
+                                    <div id="stats-elemental" class="tab-panel">
+                                        <table class="stats-table">
+                                            <thead>
+                                            <tr>
+                                                <th>Atributo</th>
+                                                <th>Niv. 1</th>
+                                                <th>Niv. 10</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>algo</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- Habilidad Definitiva -->
-                            <div class="talento">
+                            <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
                                         <img src="Simbolos/Talentos/Reiji/Definitiva.png">
@@ -199,14 +261,44 @@
                                     </div>
                                 </div>
 
-                                <div class="talento-contenido">
-                                    <p>Reiji clava su lanza en el suelo, creando una onda expansiva Hydro que nace de las profundidades de la tierra. Inflige Daño Hydro de Área a todos los enemigos a los que alcanza. Tras ello, crea un Muro de Coral que se levanta abruptamente en el límite de la onda. El Muro de Coral se considera un objeto, por lo que puede escalarse o utilizarse para bloquear ataques.</p>
-                                    <p><b>Muro de Coral:</b></p>
-                                    <ul>
-                                        <li>Provoca constantemente a los enemigos cercanos para atraerlos y que lo ataquen.</li>
-                                        <li>Aplica Hydro a los enemigos que entren en contacto con él.</li>
-                                        <li>Cada vez que el muro de coral recibe daño, este contraataca automáticamente con una ola Hydro que inflige Daño Hydro en el área equivalente al 80% de la DEF de Reiji.</li>
-                                    </ul>
+                                <!-- Botones para cambiar entre Descripción y Estadísticas -->
+                                <div class="talento-tabs">
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-definitiva')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-definitiva')">Estadísticas</button>
+                                </div>
+
+                                <!-- Contenido de las Pestañas -->
+                                <div class="talento-content">
+                                    <!-- Vista por Defecto: Descripción -->
+                                    <div id="desc-definitiva" class="tab-panel active">
+                                            <p>Reiji clava su lanza en el suelo, creando una onda expansiva Hydro que nace de las profundidades de la tierra. Inflige Daño Hydro de Área a todos los enemigos a los que alcanza. Tras ello, crea un Muro de Coral que se levanta abruptamente en el límite de la onda. El Muro de Coral se considera un objeto, por lo que puede escalarse o utilizarse para bloquear ataques.</p>
+                                        <p><b>Muro de Coral:</b></p>
+                                        <ul>
+                                            <li>Provoca constantemente a los enemigos cercanos para atraerlos y que lo ataquen.</li>
+                                            <li>Aplica Hydro a los enemigos que entren en contacto con él.</li>
+                                            <li>Cada vez que el muro de coral recibe daño, este contraataca automáticamente con una ola Hydro que inflige Daño Hydro en el área equivalente al 80% de la DEF de Reiji.</li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Vista Oculta: Estadísticas -->
+                                    <div id="stats-definitiva class="tab-panel">
+                                        <table class="stats-table">
+                                            <thead>
+                                            <tr>
+                                                <th>Atributo</th>
+                                                <th>Niv. 1</th>
+                                                <th>Niv. 10</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>algo</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
 
@@ -355,7 +447,9 @@
                             <!-- C1 -->
                             <div class="constelacion">
                                 <div class="const-header">
-                                    <img src="Simbolos/Constelaciones/Reiji/c1.webp" class="const-icono">
+                                    <div class="const-icono">
+                                        <img src="Simbolos/Constelaciones/Reiji/">
+                                    </div>
                                     <div>
                                         <div class="const-titulo">Línea de Fractura</div>
                                         <div class="const-subtitulo">Constelación Niv. 1</div>
@@ -370,7 +464,9 @@
                             <!-- C2 -->
                             <div class="constelacion">
                                 <div class="const-header">
-                                    <img src="Simbolos/Constelaciones/Reiji/c2.webp" class="const-icono">
+                                    <div class="const-icono">
+                                        <img src="Simbolos/Constelaciones/Reiji/">
+                                    </div>
                                     <div>
                                         <div class="const-titulo">Escudo que no tiembla</div>
                                         <div class="const-subtitulo">Constelación Niv. 2</div>
@@ -385,7 +481,9 @@
                             <!-- C3 -->
                             <div class="constelacion">
                                 <div class="const-header">
-                                    <img src="Simbolos/Constelaciones/Reiji/c3.webp" class="const-icono">
+                                    <div class="const-icono">
+                                        <img src="Simbolos/Constelaciones/Reiji/c3.png">
+                                    </div>
                                     <div>
                                         <div class="const-titulo">Límite de Lealtad</div>
                                         <div class="const-subtitulo">Constelación Niv. 3</div>
@@ -400,7 +498,9 @@
                             <!-- C4 -->
                             <div class="constelacion">
                                 <div class="const-header">
-                                    <img src="Simbolos/Constelaciones/Reiji/c4.webp" class="const-icono">
+                                    <div class="const-icono">
+                                        <img src="Simbolos/Constelaciones/Reiji/">
+                                    </div>
                                     <div>
                                         <div class="const-titulo">Corazón Imperturbable</div>
                                         <div class="const-subtitulo">Constelación Niv. 4</div>
@@ -415,7 +515,9 @@
                             <!-- C5 -->
                             <div class="constelacion">
                                 <div class="const-header">
-                                    <img src="Simbolos/Constelaciones/Reiji/c5.webp" class="const-icono">
+                                    <div class="const-icono">
+                                        <img src="Simbolos/Constelaciones/Reiji/c5.png">
+                                    </div>
                                     <div>
                                         <div class="const-titulo">Lanza Coralina Eterna</div>
                                         <div class="const-subtitulo">Constelación Niv. 5</div>
@@ -430,7 +532,9 @@
                             <!-- C6 -->
                             <div class="constelacion">
                                 <div class="const-header">
-                                    <img src="Simbolos/Constelaciones/Reiji/c6.webp" class="const-icono">
+                                    <div class="const-icono">
+                                        <img src="Simbolos/Constelaciones/Reiji/">
+                                    </div>
                                     <div>
                                         <div class="const-titulo">Fortaleza del Alma</div>
                                         <div class="const-subtitulo">Constelación Niv. 6</div>

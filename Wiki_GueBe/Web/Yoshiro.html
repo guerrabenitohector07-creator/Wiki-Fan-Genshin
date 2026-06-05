@@ -149,29 +149,64 @@
 
                             <h3 class="subsection-heading">Talentos</h3>
                             
-                            <div class="talento">
+                            <!-- ATAQUE NORMAL -->
+                            <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
-                                        <img src="Simbolos/Talentos/Yoshiro/Ataque.png">
+                                        <img src="Simbolos/Talentos/Yoshiro/Ataque.png" alt="Ataque Normal">
                                     </div>
                                     <div>
                                         <div class="talento-titulo">Estilo Kanazaki: Poda prematura</div>
                                         <div class="talento-subtitulo">Ataque normal</div>
-                                    </div>
+                                    </div>                                
                                 </div>
 
-                                <div class="talento-contenido">
-                                    <p><b>Ataque Normal:</b> Ejecuta hasta 6 golpes consecutivos con su espada.</p><br>
-                                    <p><b>Ataque Cargado:</b> Consume Aguante de manera constante para realizar golpes circulares continuos con la espada.<br>
+                                <!-- Botones de Cambio -->
+                                <div class="talento-tabs">
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-ataque')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-ataque')">Estadísticas</button>
+                                </div>
+
+                                <!-- Contenido -->
+                                <div class="talento-content">
+                                    <div id="desc-ataque" class="tab-panel active">
+                                        <p><b>Ataque Normal:</b> Ejecuta hasta 6 golpes consecutivos con su espada.</p><br>
+                                        <p><b>Ataque Cargado:</b> Consume Aguante de manera constante para realizar golpes circulares continuos con la espada.<br>
                                         Cuando termina el Ataque Cargado, hará un golpe aún más poderoso.</p><br>
-                                    <p><b>Ataque Descendente:</b> Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento de impacto.</p><br>
+                                        <p><b>Ataque Descendente:</b> Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento de impacto.</p><br>
+                                    </div>
+
+                                    <div id="stats-ataque" class="tab-panel">
+                                        <table class="stats-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Atributo</th>
+                                                    <th>Niv. 1</th>
+                                                    <th>Niv. 10</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Daño de 1er Golpe</td>
+                                                    <td>48.2%</td>
+                                                    <td>95.4%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Daño de Carga</td>
+                                                    <td>110%</td>
+                                                    <td>220%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="talento">
+                            <!-- HABILIDAD ELEMENTAL -->
+                            <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
-                                        <img src="Simbolos/Talentos/Yoshiro/Elemental.png">
+                                        <img src="Simbolos/Talentos/Yoshiro/Elemental.png" alt="Habilidad Elemental">
                                     </div>
                                     <div>
                                         <div class="talento-titulo">Semilla de la remembranza</div>
@@ -179,23 +214,52 @@
                                     </div>
                                 </div>
 
-                                <div class="talento-contenido">
-                                    <p>Invoca un <b>Komono</b> e inflige Daño Dendro en el AdE a los enemigos cercanos.</p>
-                                    <p><b>Komono:</b></p>
-                                    <p>• El Komono sigue al personaje en uso y, cada cierto tiempo, realiza diferentes artes almaforidas dependiendo de la vida del personaje en uso:</p><br>
-                                    <p>•    Si el personaje en uso tiene más del 60% de su Vida Máx, Komono lanza pétalos almafloridos que infligen Daño Dendro contra los enemigos dentro de cierta AdE cada 2 segundos.</p><br>
-                                    <p>•    Si el personaje en uso tiene entre el 30% y el 60% de su Vida Máx, Komono intercala entre lanzar pétalos almafloridos y pulsos almafloridos, que regeneran Vida al personaje en campo, cada 2 segundos.</p><br>
-                                    <p>•    Si tiene menos del 30% de su Vida Máx, Komono realiza pulsos almafloridos cada 2 segundos.</p><br>
-                                    <p>•    Si la Vida del personaje es superior al 70% pero inferior al 100% y no hay enemigos cerca, seguirá realizando pulsos almafloridos al personaje en campo hasta su vida máxima.</p><br>
-                                    <p>•    Si la Vida del personaje en campo es del 100% y no hay enemigos cerca, el Komono regenerará 3 pts de energía cada 2 segundos, hasta su máximo.</p><br>
-                                    <p>Tanto el daño de los Pétalos almafloridos, como la cantidad de Vida regenerada por los pulsos almafloridos son proporcionales a la Maestría Elemental de Kanazaki Yoshiro.</p>
+                                <!-- Botones de Cambio -->
+                                <div class="talento-tabs">
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-elemental')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-elemental')">Estadísticas</button>
+                                </div>
+
+                                <!-- Contenido -->
+                                <div class="talento-content">
+                                    <div id="desc-elemental" class="tab-panel active">
+                                        <p>Invoca un <b>Komono</b> e inflige Daño Dendro en el AdE a los enemigos cercanos.</p>
+                                        <p><b>Komono:</b></p>
+                                        <p>• El Komono sigue al personaje en uso y, cada cierto tiempo, realiza diferentes artes almaforidas dependiendo de la vida del personaje en uso:</p><br>
+                                        <p>• Si el personaje en uso tiene más del 60% de su Vida Máx, Komono lanza pétalos almafloridos que infligen Daño Dendro contra los enemigos dentro de cierta AdE cada 2 segundos.</p><br>
+                                        <p>• Si el personaje en uso tiene entre el 30% y el 60% de su Vida Máx, Komono intercala entre lanzar pétalos almafloridos y pulsos almafloridos, que regeneran Vida al personaje en campo, cada 2 segundos.</p><br>
+                                        <p>• Si tiene menos del 30% de su Vida Máx, Komono realiza pulsos almafloridos cada 2 segundos.</p><br>
+                                        <p>• Si la Vida del personaje es superior al 70% pero inferior al 100% y no hay enemigos cerca, seguirá realizando pulsos almafloridos al personaje en campo hasta su vida máxima.</p><br>
+                                        <p>• Si la Vida del personaje en campo es del 100% y no hay enemigos cerca, el Komono regenerará 3 pts de energía cada 2 segundos, hasta su máximo.</p><br>
+                                        <p>Tanto el daño de los Pétalos almafloridos, como la cantidad de Vida regenerada por los pulsos almafloridos son proporcionales a la Maestría Elemental de Kanazaki Yoshiro.</p>
+                                    </div>
+
+                                    <div id="stats-elemental" class="tab-panel">
+                                        <table class="stats-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Atributo</th>
+                                                    <th>Niv. 1</th>
+                                                    <th>Niv. 10</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Daño de Habilidad</td>
+                                                    <td>124.8%</td>
+                                                    <td>249.6%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="talento">
+                            <!-- HABILIDAD DEFINITIVA -->
+                            <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
-                                        <img src="Simbolos/Talentos/Yoshiro/Definitiva.png">
+                                        <img src="Simbolos/Talentos/Yoshiro/Definitiva.png" alt="Habilidad Definitiva">
                                     </div>
                                     <div>
                                         <div class="talento-titulo">Text lorem ipsum</div>
@@ -203,28 +267,56 @@
                                     </div>
                                 </div>
 
-                                <div class="talento-contenido">
-                                    <p>Kanazaki Yoshiro inflige Daño Dendro en el AdE contra los enemigos alrededor, recupera Vida para todos los personajes cercanos del equipo en función de la Maestría Elemental de Kanazaki Yoshiro y hace brotar un <b>Hachi-uye</b>, junto a un jardín de raíces ancestrales.</p>
-                                    <p><b>Jardín de raíces ancestrales:</b></p>
-                                    <p>• Si la Vida de todos los personajes del equipo es igual o superior al 50%, aumenta la Maestría Elemental de dicho personaje en proporción a la Maestría Elemental de Kanazaki Yoshiro.</p><br>
-                                    <p>• Si la Vida de algún personaje en combate es inferior al 50%, se desata una oleada de raíces protectoras que restaura inmediatamente Vida a todos los miembros del equipo y reduce el daño recibido por el personaje en uso durante 4 s. Este efecto solo puede ocurrir una vez cada 10 segundos.</p><br>
-                                    <p>• La cadencia con la que el <b>Komono</b> ejecuta sus Artes almaforidas se reduce a 1.5 segundos.</p><br>
-                                    <p>• Aumenta la RES a las Interrupciones de todo el equipo un 5% dentro del jardín de raíces ancestrales.</p><br>
-                                    <p>• Cuando su temporizador llega a cero, el <b>Hachi-uye</b> explota, infligiendo Daño Dendro en el AdE.</p>
+                                <!-- Botones de Cambio -->
+                                <div class="talento-tabs">
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-definitiva')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-definitiva')">Estadísticas</button>
+                                </div>
+
+                                <!-- Contenido -->
+                                <div class="talento-content">
+                                    <div id="desc-definitiva" class="tab-panel active">
+                                        <p>Kanazaki Yoshiro inflige Daño Dendro en el AdE contra los enemigos alrededor, recupera Vida para todos los personajes cercanos del equipo en función de la Maestría Elemental de Kanazaki Yoshiro y hace brotar un <b>Hachi-uye</b>, junto a un jardín de raíces ancestrales.</p>
+                                        <p><b>Jardín de raíces ancestrales:</b></p>
+                                        <p>• Si la Vida de todos los personajes del equipo es igual o superior al 50%, aumenta la Maestría Elemental de dicho personaje en proporción a la Maestría Elemental de Kanazaki Yoshiro.</p><br>
+                                        <p>• Si la Vida de algún personaje en combate es inferior al 50%, se desata una oleada de raíces protectoras que restaura inmediatamente Vida a todos los miembros del equipo y reduce el daño recibido por el personaje en uso durante 4 s. Este efecto solo puede ocurrir una vez cada 10 segundos.</p><br>
+                                        <p>• La cadencia con la que el <b>Komono</b> ejecuta sus Artes almaforidas se reduce a 1.5 segundos.</p><br>
+                                        <p>• Aumenta la RES a las Interrupciones de todo el equipo un 5% dentro del jardín de raíces ancestrales.</p><br>
+                                        <p>• Cuando su temporizador llega a cero, el <b>Hachi-uye</b> explota, infligiendo Daño Dendro en el AdE.</p>
+                                    </div>
+
+                                    <div id="stats-definitiva" class="tab-panel">
+                                        <table class="stats-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Atributo</th>
+                                                    <th>Niv. 1</th>
+                                                    <th>Niv. 10</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Daño de Explosión</td>
+                                                    <td>214.2%</td>
+                                                    <td>428.4%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
 
+                            <!-- TALENTOS PASIVOS (Se mantienen fijos sin pestañas ya que no llevan tabla de stats) -->
                             <div class="talento">
                                 <div class="talento-header">
                                     <div class="talento-icono">
-                                        <img src="Simbolos/Talentos/Yoshiro/Pasivo1.png">
+                                        <img src="Simbolos/Talentos/Yoshiro/Pasivo1.png" alt="Pasivo 1">
                                     </div>
                                     <div>
                                         <div class="talento-titulo">Text lorem ipsum</div>
                                         <div class="talento-subtitulo">Pasivo 1</div>
                                     </div>
                                 </div>
-
                                 <div class="talento-contenido">
                                     <p>Si el personaje en uso está bajo los efectos del Komono, aumenta su resistencia a la explosión de los Núcleos Dendro de las reacciones de florecimiento, sobreflorecimiento, Crepitar o Florecimiento Lunar en un 5% en función de la Maestría Elemental de Kanazaki Yoshiro, hasta un 40%.</p>
                                 </div>
@@ -233,14 +325,13 @@
                             <div class="talento">
                                 <div class="talento-header">
                                     <div class="talento-icono">
-                                        <img src="Simbolos/Talentos/Yoshiro/Pasivo2.png">
+                                        <img src="Simbolos/Talentos/Yoshiro/Pasivo2.png" alt="Pasivo 2">
                                     </div>
                                     <div>
                                         <div class="talento-titulo">Text lorem ipsum</div>
                                         <div class="talento-subtitulo">Pasivo 2</div>
                                     </div>
                                 </div>
-
                                 <div class="talento-contenido">
                                     <p>Aumenta en 75 puntos la Maestría Elemental de Kanazaki Yoshiro por cada personaje del equipo cuya vida sea igual o superior al 70% de su vida máxima.</p>
                                 </div>
@@ -249,14 +340,13 @@
                             <div class="talento">
                                 <div class="talento-header">
                                     <div class="talento-icono">
-                                        <img src="Simbolos/Talentos/Yoshiro/Pasivo3.png">
+                                        <img src="Simbolos/Talentos/Yoshiro/Pasivo3.png" alt="Pasivo 3">
                                     </div>
                                     <div>
                                         <div class="talento-titulo">Text lorem ipsum</div>
                                         <div class="talento-subtitulo">Pasivo 3</div>
                                     </div>
                                 </div>
-
                                 <div class="talento-contenido">
                                     <p>Las recetas que requieren ingredientes comunes consumen un 20% menos de esos ingredientes cuando Yoshiro las cocina. Además, las probabilidades de obtener un “Perfectamente Sazonado” al cocinar aumentan un 10%.</p>
                                 </div>
@@ -355,7 +445,9 @@
                             <!-- C1 -->
                             <div class="constelacion">
                                 <div class="const-header">
-                                    <img src="Simbolos/Constelaciones/Yoshiro/c1.webp" class="const-icono">
+                                    <div class="const-icono">
+                                        <img src="Simbolos/Constelaciones/Yoshiro/c1.png">
+                                    </div>
                                     <div>
                                         <div class="const-titulo">Reverberación Primaveral</div>
                                         <div class="const-subtitulo">Constelación Niv. 1</div>
@@ -370,7 +462,9 @@
                             <!-- C2 -->
                             <div class="constelacion">
                                 <div class="const-header">
-                                    <img src="Simbolos/Constelaciones/Yoshiro/c2.webp" class="const-icono">
+                                    <div class="const-icono">
+                                        <img src="Simbolos/Constelaciones/Yoshiro/c2.png">
+                                    </div>
                                     <div>
                                         <div class="const-titulo">Meditación fructífera</div>
                                         <div class="const-subtitulo">Constelación Niv. 2</div>
@@ -385,7 +479,9 @@
                             <!-- C3 -->
                             <div class="constelacion">
                                 <div class="const-header">
-                                    <img src="Simbolos/Constelaciones/Yoshiro/c3.webp" class="const-icono">
+                                    <div class="const-icono">
+                                        <img src="Simbolos/Constelaciones/Yoshiro/c3.png">
+                                    </div>
                                     <div>
                                         <div class="const-titulo">Brote del Recuerdo</div>
                                         <div class="const-subtitulo">Constelación Niv. 3</div>
@@ -400,7 +496,9 @@
                             <!-- C4 -->
                             <div class="constelacion">
                                 <div class="const-header">
-                                    <img src="Simbolos/Constelaciones/Yoshiro/c4.webp" class="const-icono">
+                                    <div class="const-icono">
+                                        <img src="Simbolos/Constelaciones/Yoshiro/c4.png">
+                                    </div>
                                     <div>
                                         <div class="const-titulo">Eco de lo Germinado</div>
                                         <div class="const-subtitulo">Constelación Niv. 4</div>
@@ -415,7 +513,9 @@
                             <!-- C5 -->
                             <div class="constelacion">
                                 <div class="const-header">
-                                    <img src="Simbolos/Constelaciones/Yoshiro/c5.webp" class="const-icono">
+                                    <div class="const-icono">
+                                        <img src="Simbolos/Constelaciones/Yoshiro/c5.png">
+                                    </div>
                                     <div>
                                         <div class="const-titulo">Raíz de lo Verdadero</div>
                                         <div class="const-subtitulo">Constelación Niv. 5</div>
@@ -430,7 +530,9 @@
                             <!-- C6 -->
                             <div class="constelacion">
                                 <div class="const-header">
-                                    <img src="Simbolos/Constelaciones/Yoshiro/c6.webp" class="const-icono">
+                                    <div class="const-icono">
+                                        <img src="Simbolos/Constelaciones/Yoshiro/c6.png">
+                                    </div>
                                     <div>
                                         <div class="const-titulo">Resistencia Inmunológica</div>
                                         <div class="const-subtitulo">Constelación Niv. 6</div>

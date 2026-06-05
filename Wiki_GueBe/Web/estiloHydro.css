@@ -390,7 +390,6 @@ a:hover {
    ========================================================================== */
 .talento {
     background: #1e1f2b;
-    border-radius: 10px;
     padding: 15px;
     color: #fff;
     margin-bottom: 15px;
@@ -406,11 +405,20 @@ a:hover {
 }
 
 .talento-icono {
-    width: 40px;
-    height: 40px;
-    background: var(--color-elemento);
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain; 
+}
+
+/* Asegura que cualquier img dentro del icono respete el tamaño */
+.talento-icono img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .talento-titulo {
@@ -423,14 +431,99 @@ a:hover {
     color: #ccc;
 }
 
-.talento-contenido {
-    margin-top: 10px;
-    font-size: 14px;
-    line-height: 1.5;
+/* Contenedor principal del talento */
+.talento-container {
+  padding: 15px;
+  margin-bottom: 20px;
+  color: #eceff4;
 }
 
-.talento-contenido b {
-    color: #ffffff;
+/* Botones de navegación */
+.talento-tabs {
+  display: flex;
+  gap: 10px;
+  border-bottom: 2px solid #3f4248;
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: #a0a5b0;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: #eceff4;
+}
+
+/* Estado activo del botón (Estilo Genshin) */
+.tab-btn.active {
+  color: var(--color-elemento);
+  border-bottom: 2px solid var(--color-elemento);
+  margin-bottom: -2px;
+}
+
+/* Control de visibilidad de las pestañas,
+forzando que los paneles ocultos no ocupen espacio */
+.tab-panel {
+    display: none !important;
+}
+
+.tab-panel.active {
+    display: block !important;
+}
+
+/* Diseño de la barra de pestañas */
+.talento-tabs {
+    display: flex;
+    gap: 15px;
+    border-bottom: 2px solid #3f4248;
+    margin: 10px 0 15px 0;
+}
+
+/* Botones de pestaña */
+.tab-btn {
+    background: none;
+    border: none;
+    color: #888e9b;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tab-btn:hover {
+    color: #eceff4;
+}
+
+/* Pestaña activa (Estilo dorado de Genshin) */
+.tab-btn.active {
+    color: var(--color-elemento);
+    border-bottom: 2px solid var(--color-elemento);
+    margin-bottom: -2px; /* Alinea perfectamente sobre el borde inferior */
+}
+
+/* Estilos de las tablas de atributos */
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.stats-table th {
+    color: #fff;
+    text-align: left;
+    padding: 8px;
+    border-bottom: 2px solid #3f4248;
+}
+.stats-table td {
+    padding: 8px;
+    border-bottom: 1px solid #2d3034;
 }
 
 .constelacion {
@@ -449,11 +542,20 @@ a:hover {
 }
 
 .const-icono {
-    width: 40px;
-    height: 40px;
-    background: var(--color-oscuro);
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain; 
+}
+
+/* Asegura que cualquier img dentro del icono respete el tamaño */
+.const-icono img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .const-titulo {
@@ -793,7 +895,7 @@ a:hover {
 
 .tab-btn.active {
     color: white;
-    border-bottom: 2px solid gold;
+    border-bottom: 2px solid var(--color-elemento);
 }
 
 /* ==========================================================================

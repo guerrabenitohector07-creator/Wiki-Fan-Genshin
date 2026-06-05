@@ -138,7 +138,7 @@
 
                             <h3 class="subsection-heading">Talentos</h3>
                             
-                            <div class="talento">
+                            <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
                                         <img src="Simbolos/Talentos/Lutte/Ataque.png">
@@ -149,17 +149,52 @@
                                     </div>
                                 </div>
 
-                                <div class="talento-contenido">
-                                    <p><b>Ataque Normal:</b> 
-                                        Ejecuta hasta 4 golpes marciales fortalecidos con el poder del agua para infligir Daño Hydro.</p><br>
-                                    <p><b>Ataque Cargado:</b> 
-                                        Consume una cierta cantidad de Aguante para ejecutar una voltereta y propinar un puñetazo descendente, infligiendo Daño Hydro en el proceso.</p><br>
-                                    <p><b>Ataque Descendente:</b> 
-                                        Concentra el poder del agua para lanzarse desde el aire y golpear el suelo, dañando a todos los enemigos cercanos e infligiendo Daño Hydro en el AdE en el momento del impacto.</p><br>
+                                <!-- Botones para cambiar entre Descripción y Estadísticas -->
+                                <div class="talento-tabs">
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-ataque')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-ataque')">Estadísticas</button>
+                                </div>
+
+                                <!-- Contenido de las Pestañas -->
+                                <div class="talento-content">
+                                    <!-- Vista por Defecto: Descripción -->
+                                    <div id="desc-ataque" class="tab-panel active">
+                                        <p><b>Ataque Normal:</b> 
+                                            Ejecuta hasta 4 golpes marciales fortalecidos con el poder del agua para infligir Daño Hydro.</p><br>
+                                        <p><b>Ataque Cargado:</b> 
+                                            Consume una cierta cantidad de Aguante para ejecutar una voltereta y propinar un puñetazo descendente, infligiendo Daño Hydro en el proceso.</p><br>
+                                        <p><b>Ataque Descendente:</b> 
+                                            Concentra el poder del agua para lanzarse desde el aire y golpear el suelo, dañando a todos los enemigos cercanos e infligiendo Daño Hydro en el AdE en el momento del impacto.</p><br>
+                                    </div>
+
+                                    <!-- Vista Oculta: Estadísticas -->
+                                    <div id="stats-ataque" class="tab-panel">
+                                        <table class="stats-table">
+                                            <thead>
+                                            <tr>
+                                                <th>Atributo</th>
+                                                <th>Niv. 1</th>
+                                                <th>Niv. 10</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>Daño de 1er Golpe</td>
+                                                <td>48.2%</td>
+                                                <td>95.4%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Daño de Carga</td>
+                                                <td>110%</td>
+                                                <td>220%</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="talento">
+                            <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
                                         <img src="Simbolos/Talentos/Lutte/Elemental.webp">
@@ -170,18 +205,48 @@
                                     </div>
                                 </div>
 
-                                <div class="talento-contenido">
-                                    <p>Lutte demuestra todo su potencial de pelea y realiza una u otra acción dependiendo de si se pulsa una vez o se mantiene pulsado:</p>
-                                    <p><b>Pulsar una vez: ¡Por el honor de Merópide!</b><br>
-                                        Embiste al enemigo, infligiendo Daño Hydro y aumenta su ataque en proporción al ataque de Lutte durante 15 segundos.</p>
-                                        <p><b>Mantener pulsado: Furia apoteósica</b><br>
-                                        Embiste al enemigo, infligiendo Daño Hydro y entra en el estado de Furia apoteósica, en este estado, el Ataque Normal de Lutte se transforma en “Puñetazo apoteósico” y sus Ataques Cargados en “Pirueta apoteósica”. Por otro lado, su Habilidad Elemental se transforma en un “Embestida apoteósica”, con el que arremete hacia delante para infligir Daño Hydro. El daño infligido de esta manera se considera daño de Ataque Normal.</p>
+                                <!-- Botones para cambiar entre Descripción y Estadísticas -->
+                                <div class="talento-tabs">
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-elemental')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-elemental')">Estadísticas</button>
+                                </div>
+
+                                <!-- Contenido de las Pestañas -->
+                                <div class="talento-content">
+                                    <!-- Vista por Defecto: Descripción -->
+                                    <div id="desc-elemental" class="tab-panel active">
+                                        <p>Lutte demuestra todo su potencial de pelea y realiza una u otra acción dependiendo de si se pulsa una vez o se mantiene pulsado:</p>
+                                            <p><b>Pulsar una vez: ¡Por el honor de Merópide!</b><br>
+                                                Embiste al enemigo, infligiendo Daño Hydro y aumenta su ataque en proporción al ataque de Lutte durante 15 segundos.</p>
+                                            <p><b>Mantener pulsado: Furia apoteósica</b><br>
+                                                Embiste al enemigo, infligiendo Daño Hydro y entra en el estado de Furia apoteósica, en este estado, el Ataque Normal de Lutte se transforma en “Puñetazo apoteósico” y sus Ataques Cargados en “Pirueta apoteósica”. Por otro lado, su Habilidad Elemental se transforma en un “Embestida apoteósica”, con el que arremete hacia delante para infligir Daño Hydro. El daño infligido de esta manera se considera daño de Ataque Normal.</p>
                                         <p><b>Arjé: Ousia</b><br>
-                                        Cada cierto tiempo, cuando Lutte golpee a un enemigo con "puñetazo apoteósico", en la ubicación de dicho enemigo caerá un filo fluyente que inflige Daño Hydro cargado de energía ousía.</p>
+                                            Cada cierto tiempo, cuando Lutte golpee a un enemigo con "puñetazo apoteósico", en la ubicación de dicho enemigo caerá un filo fluyente que inflige Daño Hydro cargado de energía ousía.</p>
+                                    </div>
+
+                                    <!-- Vista Oculta: Estadísticas -->
+                                    <div id="stats-elemental" class="tab-panel">
+                                        <table class="stats-table">
+                                            <thead>
+                                            <tr>
+                                                <th>Atributo</th>
+                                                <th>Niv. 1</th>
+                                                <th>Niv. 10</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>algo</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="talento">
+                            <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
                                         <img src="Simbolos/Talentos/Lutte/Definitiva.webp">
@@ -192,8 +257,38 @@
                                     </div>
                                 </div>
 
-                                <div class="talento-contenido">
-                                    <p>Realiza una patada giratoria que inflige Daño Hydro en el AdE y reduce un 40% la Res. Hydro durante 10s.</p>
+                                <!-- Botones para cambiar entre Descripción y Estadísticas -->
+                                <div class="talento-tabs">
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-definitiva')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-definitiva')">Estadísticas</button>
+                                </div>
+
+                                <!-- Contenido de las Pestañas -->
+                                <div class="talento-content">
+                                    <!-- Vista por Defecto: Descripción -->
+                                    <div id="desc-definitiva" class="tab-panel active">
+                                        <p>Realiza una patada giratoria que inflige Daño Hydro en el AdE y reduce un 40% la Res. Hydro durante 10s.</p>
+                                    </div>
+
+                                    <!-- Vista Oculta: Estadísticas -->
+                                    <div id="stats-definitiva" class="tab-panel">
+                                        <table class="stats-table">
+                                            <thead>
+                                            <tr>
+                                                <th>Atributo</th>
+                                                <th>Niv. 1</th>
+                                                <th>Niv. 10</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>algo</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
 
@@ -338,7 +433,9 @@
                                 <div class="constelacion">
 
                                     <div class="const-header">
-                                        <img src="Simbolos/Constelaciones/Lutte/c1.webp" class="const-icono">
+                                        <div class="const-icono">
+                                            <img src="Simbolos/Constelaciones/Lutte/">
+                                        </div>
                                         <div>
                                             <div class="const-titulo">Furia Extendida</div>
                                             <div class="const-subtitulo">Constelación Niv. 1</div>
@@ -356,7 +453,9 @@
                                 <div class="constelacion">
 
                                     <div class="const-header">
-                                        <img src="Simbolos/Constelaciones/Lutte/c2.webp" class="const-icono">
+                                        <div class="const-icono">
+                                            <img src="Simbolos/Constelaciones/Lutte/">
+                                        </div>
                                         <div>
                                             <div class="const-titulo">¡Arduo entrenaminento!</div>
                                             <div class="const-subtitulo">Constelación Niv. 2</div>
@@ -374,7 +473,9 @@
                                 <div class="constelacion">
 
                                     <div class="const-header">
-                                        <img src="Simbolos/Constelaciones/Lutte/c3.webp" class="const-icono">
+                                        <div class="const-icono">
+                                            <img src="Simbolos/Constelaciones/Lutte/">
+                                        </div>
                                         <div>
                                             <div class="const-titulo">Hora de apretar tornillos</div>
                                             <div class="const-subtitulo">Constelación Niv. 3</div>
@@ -392,7 +493,9 @@
                                 <div class="constelacion">
 
                                     <div class="const-header">
-                                        <img src="Simbolos/Constelaciones/Lutte/c4.webp" class="const-icono">
+                                        <div class="const-icono">
+                                            <img src="Simbolos/Constelaciones/Lutte/">
+                                        </div>
                                         <div>
                                             <div class="const-titulo">Risa Contagiosa</div>
                                             <div class="const-subtitulo">Constelación Niv. 4</div>
@@ -410,7 +513,9 @@
                                 <div class="constelacion">
 
                                     <div class="const-header">
-                                        <img src="Simbolos/Constelaciones/Lutte/c5.webp" class="const-icono">
+                                        <div class="const-icono">
+                                            <img src="Simbolos/Constelaciones/Lutte/">
+                                        </div>
                                         <div>
                                             <div class="const-titulo">Text lorem ipsum</div>
                                             <div class="const-subtitulo">Constelación Niv. 5</div>
@@ -428,7 +533,9 @@
                                 <div class="constelacion">
 
                                     <div class="const-header">
-                                        <img src="Simbolos/Constelaciones/Lutte/c6.webp" class="const-icono">
+                                        <div class="const-icono">
+                                            <img src="Simbolos/Constelaciones/Lutte/">
+                                        </div>
                                         <div>
                                             <div class="const-titulo">Carcajada Inextinguible</div>
                                             <div class="const-subtitulo">Constelación Niv. 6</div>

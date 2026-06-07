@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanazaki Yoshiro | Wiki Genshin Impact | Fandom</title>
-    <link rel="stylesheet" href="estiloDendro.css">
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
@@ -149,7 +149,7 @@
 
                             <h3 class="subsection-heading">Talentos</h3>
                             
-                            <!-- ATAQUE NORMAL -->
+                            <!-- ==================== ATAQUE NORMAL ==================== -->
                             <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
@@ -177,24 +177,42 @@
                                     </div>
 
                                     <div id="stats-ataque" class="tab-panel">
+                                        <!-- Selector de Nivel Personalizado -->
+                                        <div class="control-nivel-talento">
+                                            <label for="selector-yoshiro-ataque">Nivel de Talento: </label>
+                                            <select id="selector-yoshiro-ataque" class="selector-nivel">
+                                                <option value="0">Nv. 1</option>
+                                                <option value="1">Nv. 2</option>
+                                                <option value="2">Nv. 3</option>
+                                                <option value="3">Nv. 4</option>
+                                                <option value="4">Nv. 5</option>
+                                                <option value="5">Nv. 6</option>
+                                                <option value="6">Nv. 7</option>
+                                                <option value="7">Nv. 8</option>
+                                                <option value="8">Nv. 9</option>
+                                                <option value="9" selected>Nv. 10</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Tabla de Estadísticas con Diseño Original Ajustado -->
                                         <table class="stats-table">
                                             <thead>
                                                 <tr>
                                                     <th>Atributo</th>
-                                                    <th>Niv. 1</th>
-                                                    <th>Niv. 10</th>
+                                                    <!-- Cabecera dinámica que se actualizará con JS -->
+                                                    <th class="cabecera-nivel-dinamica">Nv. 10</th> 
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td>Daño de 1er Golpe</td>
-                                                    <td>48.2%</td>
-                                                    <td>95.4%</td>
+                                                    <!-- Escala real calculada desde el 48.2% (Nv.1) hasta el 95.4% (Nv.10) -->
+                                                    <td class="valor-dinamico" data-valores="48.2%,52.1%,56.0%,61.3%,65.2%,69.7%,75.5%,81.3%,87.1%,95.4%">95.4%</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Daño de Carga</td>
-                                                    <td>110%</td>
-                                                    <td>220%</td>
+                                                    <!-- Escala real calculada desde el 110.0% (Nv.1) hasta el 220.0% (Nv.10) -->
+                                                    <td class="valor-dinamico" data-valores="110.0%,119.2%,128.3%,140.6%,149.7%,160.4%,174.2%,187.9%,201.7%,220.0%">220%</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -202,7 +220,7 @@
                                 </div>
                             </div>
 
-                            <!-- HABILIDAD ELEMENTAL -->
+                            <!-- ==================== HABILIDAD ELEMENTAL ==================== -->
                             <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
@@ -235,19 +253,36 @@
                                     </div>
 
                                     <div id="stats-elemental" class="tab-panel">
+                                        <!-- Selector de Nivel -->
+                                        <div class="control-nivel-talento">
+                                            <label for="selector-yoshiro-elemental">Nivel de Talento: </label>
+                                            <select id="selector-yoshiro-elemental" class="selector-nivel">
+                                                <option value="0">Nv. 1</option>
+                                                <option value="1">Nv. 2</option>
+                                                <option value="2">Nv. 3</option>
+                                                <option value="3">Nv. 4</option>
+                                                <option value="4">Nv. 5</option>
+                                                <option value="5">Nv. 6</option>
+                                                <option value="6">Nv. 7</option>
+                                                <option value="7">Nv. 8</option>
+                                                <option value="8">Nv. 9</option>
+                                                <option value="9" selected>Nv. 10</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Tabla de Estadísticas -->
                                         <table class="stats-table">
                                             <thead>
                                                 <tr>
                                                     <th>Atributo</th>
-                                                    <th>Niv. 1</th>
-                                                    <th>Niv. 10</th>
+                                                    <th class="cabecera-nivel-dinamica">Nv. 10</th> 
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td>Daño de Habilidad</td>
-                                                    <td>124.8%</td>
-                                                    <td>249.6%</td>
+                                                    <!-- Escala real calculada desde el 124.8% (Nv.1) hasta el 249.6% (Nv.10) -->
+                                                    <td class="valor-dinamico" data-valores="124.8%,134.2%,143.5%,156.0%,165.4%,176.3%,190.3%,204.4%,218.4%,249.6%">249.6%</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -255,13 +290,14 @@
                                 </div>
                             </div>
 
-                            <!-- HABILIDAD DEFINITIVA -->
+                            <!-- ==================== HABILIDAD DEFINITIVA ==================== -->
                             <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
                                         <img src="Simbolos/Talentos/Yoshiro/Definitiva.png" alt="Habilidad Definitiva">
                                     </div>
                                     <div>
+                                        <!-- He mantenido el título original, cámbialo por el definitivo si sustituyes el lorem ipsum -->
                                         <div class="talento-titulo">Text lorem ipsum</div>
                                         <div class="talento-subtitulo">Habilidad definitiva</div>
                                     </div>
@@ -286,19 +322,36 @@
                                     </div>
 
                                     <div id="stats-definitiva" class="tab-panel">
+                                        <!-- Selector de Nivel -->
+                                        <div class="control-nivel-talento">
+                                            <label for="selector-yoshiro-definitiva">Nivel de Talento: </label>
+                                            <select id="selector-yoshiro-definitiva" class="selector-nivel">
+                                                <option value="0">Nv. 1</option>
+                                                <option value="1">Nv. 2</option>
+                                                <option value="2">Nv. 3</option>
+                                                <option value="3">Nv. 4</option>
+                                                <option value="4">Nv. 5</option>
+                                                <option value="5">Nv. 6</option>
+                                                <option value="6">Nv. 7</option>
+                                                <option value="7">Nv. 8</option>
+                                                <option value="8">Nv. 9</option>
+                                                <option value="9" selected>Nv. 10</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Tabla de Estadísticas -->
                                         <table class="stats-table">
                                             <thead>
                                                 <tr>
                                                     <th>Atributo</th>
-                                                    <th>Niv. 1</th>
-                                                    <th>Niv. 10</th>
+                                                    <th class="cabecera-nivel-dinamica">Nv. 10</th> 
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td>Daño de Explosión</td>
-                                                    <td>214.2%</td>
-                                                    <td>428.4%</td>
+                                                    <!-- Escala real calculada desde el 214.2% (Nv.1) hasta el 428.4% (Nv.10) -->
+                                                    <td class="valor-dinamico" data-valores="214.2%,230.3%,246.5%,267.7%,283.9%,302.6%,326.8%,351.1%,375.3%,428.4%">428.4%</td>
                                                 </tr>
                                             </tbody>
                                         </table>

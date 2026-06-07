@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lutte | Wiki Genshin Impact | Fandom</title>
-    <link rel="stylesheet" href="estiloHydro.css">
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
@@ -138,66 +138,77 @@
 
                             <h3 class="subsection-heading">Talentos</h3>
                             
+                            <!-- ==================== LUTTE: ATAQUE NORMAL ==================== -->
                             <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
-                                        <img src="Simbolos/Talentos/Lutte/Ataque.png">
+                                        <img src="Simbolos/Talentos/Lutte/Ataque.png" alt="Ataque Normal">
                                     </div>
                                     <div>
-                                        <div class="talento-titulo">Text lorem ipsum</div>
+                                        <div class="talento-titulo">Estilo Merópide: Torrente Marcial</div>
                                         <div class="talento-subtitulo">Ataque normal</div>
                                     </div>
                                 </div>
 
                                 <!-- Botones para cambiar entre Descripción y Estadísticas -->
                                 <div class="talento-tabs">
-                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-ataque')">Descripción</button>
-                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-ataque')">Estadísticas</button>
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-ataque-lutte')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-ataque-lutte')">Estadísticas</button>
                                 </div>
 
                                 <!-- Contenido de las Pestañas -->
                                 <div class="talento-content">
-                                    <!-- Vista por Defecto: Descripción -->
-                                    <div id="desc-ataque" class="tab-panel active">
-                                        <p><b>Ataque Normal:</b> 
-                                            Ejecuta hasta 4 golpes marciales fortalecidos con el poder del agua para infligir Daño Hydro.</p><br>
-                                        <p><b>Ataque Cargado:</b> 
-                                            Consume una cierta cantidad de Aguante para ejecutar una voltereta y propinar un puñetazo descendente, infligiendo Daño Hydro en el proceso.</p><br>
-                                        <p><b>Ataque Descendente:</b> 
-                                            Concentra el poder del agua para lanzarse desde el aire y golpear el suelo, dañando a todos los enemigos cercanos e infligiendo Daño Hydro en el AdE en el momento del impacto.</p><br>
+                                    <div id="desc-ataque-lutte" class="tab-panel active">
+                                        <p><b>Ataque Normal:</b> Ejecuta hasta 4 golpes marciales fortalecidos con el poder del agua para infligir Daño Hydro.</p><br>
+                                        <p><b>Ataque Cargado:</b> Consume una cierta cantidad de Aguante para ejecutar una voltereta y propinar un puñetazo descendente, infligiendo Daño Hydro en el proceso.</p><br>
+                                        <p><b>Ataque Descendente:</b> Concentra el poder del agua para lanzarse desde el aire y golpear el suelo, dañando a todos los enemigos cercanos e infligiendo Daño Hydro en el AdE en el momento del impacto.</p><br>
                                     </div>
 
-                                    <!-- Vista Oculta: Estadísticas -->
-                                    <div id="stats-ataque" class="tab-panel">
+                                    <div id="stats-ataque-lutte" class="tab-panel">
+                                        <!-- Selector de Nivel -->
+                                        <div class="control-nivel-talento">
+                                            <label for="selector-lutte-ataque">Nivel de Talento: </label>
+                                            <select id="selector-lutte-ataque" class="selector-nivel">
+                                                <option value="0">Nv. 1</option>
+                                                <option value="1">Nv. 2</option>
+                                                <option value="2">Nv. 3</option>
+                                                <option value="3">Nv. 4</option>
+                                                <option value="4">Nv. 5</option>
+                                                <option value="5">Nv. 6</option>
+                                                <option value="6">Nv. 7</option>
+                                                <option value="7">Nv. 8</option>
+                                                <option value="8">Nv. 9</option>
+                                                <option value="9" selected>Nv. 10</option>
+                                            </select>
+                                        </div>
+
                                         <table class="stats-table">
                                             <thead>
-                                            <tr>
-                                                <th>Atributo</th>
-                                                <th>Niv. 1</th>
-                                                <th>Niv. 10</th>
-                                            </tr>
+                                                <tr>
+                                                    <th>Atributo</th>
+                                                    <th class="cabecera-nivel-dinamica">Nv. 10</th> 
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td>Daño de 1er Golpe</td>
-                                                <td>48.2%</td>
-                                                <td>95.4%</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Daño de Carga</td>
-                                                <td>110%</td>
-                                                <td>220%</td>
-                                            </tr>
+                                                <tr>
+                                                    <td>Daño de 1er Golpe</td>
+                                                    <td class="valor-dinamico" data-valores="48.2%,52.1%,56.0%,61.3%,65.2%,69.7%,75.5%,81.3%,87.1%,95.4%">95.4%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Daño de Carga</td>
+                                                    <td class="valor-dinamico" data-valores="110.0%,119.2%,128.3%,140.6%,149.7%,160.4%,174.2%,187.9%,201.7%,220.0%">220.0%</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- ==================== LUTTE: HABILIDAD ELEMENTAL ==================== -->
                             <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
-                                        <img src="Simbolos/Talentos/Lutte/Elemental.webp">
+                                        <img src="Simbolos/Talentos/Lutte/Elemental.webp" alt="Habilidad Elemental">
                                     </div>
                                     <div>
                                         <div class="talento-titulo">"Propuestas, propuestas"</div>
@@ -207,85 +218,140 @@
 
                                 <!-- Botones para cambiar entre Descripción y Estadísticas -->
                                 <div class="talento-tabs">
-                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-elemental')">Descripción</button>
-                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-elemental')">Estadísticas</button>
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-elemental-lutte')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-elemental-lutte')">Estadísticas</button>
                                 </div>
 
                                 <!-- Contenido de las Pestañas -->
                                 <div class="talento-content">
-                                    <!-- Vista por Defecto: Descripción -->
-                                    <div id="desc-elemental" class="tab-panel active">
-                                        <p>Lutte demuestra todo su potencial de pelea y realiza una u otra acción dependiendo de si se pulsa una vez o se mantiene pulsado:</p>
-                                            <p><b>Pulsar una vez: ¡Por el honor de Merópide!</b><br>
-                                                Embiste al enemigo, infligiendo Daño Hydro y aumenta su ataque en proporción al ataque de Lutte durante 15 segundos.</p>
-                                            <p><b>Mantener pulsado: Furia apoteósica</b><br>
-                                                Embiste al enemigo, infligiendo Daño Hydro y entra en el estado de Furia apoteósica, en este estado, el Ataque Normal de Lutte se transforma en “Puñetazo apoteósico” y sus Ataques Cargados en “Pirueta apoteósica”. Por otro lado, su Habilidad Elemental se transforma en un “Embestida apoteósica”, con el que arremete hacia delante para infligir Daño Hydro. El daño infligido de esta manera se considera daño de Ataque Normal.</p>
+                                    <div id="desc-elemental-lutte" class="tab-panel active">
+                                        <p>Lutte demuestra todo su potencial de pelea y realiza una u otra acción dependiendo de si se pulsa una vez o se mantiene pulsado:</p><br>
+                                        <p><b>Pulsar una vez: ¡Por el honor de Merópide!</b><br>
+                                        Embiste al enemigo, infligiendo Daño Hydro y aumenta su ataque en proporción al ataque de Lutte durante 15 segundos.</p><br>
+                                        <p><b>Mantener pulsado: Furia apoteósica</b><br>
+                                        Embiste al enemigo, infligiendo Daño Hydro y entra en el estado de Furia apoteósica. En este estado, el Ataque Normal de Lutte se transforma en “Puñetazo apoteósico” y sus Ataques Cargados en “Pirueta apoteósica”. Por otro lado, su Habilidad Elemental se transforma en “Embestida apoteósica”, con el que arremete hacia delante para infligir Daño Hydro. El daño infligido de esta manera se considera daño de Ataque Normal.</p><br>
                                         <p><b>Arjé: Ousia</b><br>
-                                            Cada cierto tiempo, cuando Lutte golpee a un enemigo con "puñetazo apoteósico", en la ubicación de dicho enemigo caerá un filo fluyente que inflige Daño Hydro cargado de energía ousía.</p>
+                                        Cada cierto tiempo, cuando Lutte golpee a un enemigo con "puñetazo apoteósico", en la ubicación de dicho enemigo caerá un filo fluyente que inflige Daño Hydro cargado de energía ousía.</p>
                                     </div>
 
-                                    <!-- Vista Oculta: Estadísticas -->
-                                    <div id="stats-elemental" class="tab-panel">
+                                    <div id="stats-elemental-lutte" class="tab-panel">
+                                        <!-- Selector de Nivel -->
+                                        <div class="control-nivel-talento">
+                                            <label for="selector-lutte-elemental">Nivel de Talento: </label>
+                                            <select id="selector-lutte-elemental" class="selector-nivel">
+                                                <option value="0">Nv. 1</option>
+                                                <option value="1">Nv. 2</option>
+                                                <option value="2">Nv. 3</option>
+                                                <option value="3">Nv. 4</option>
+                                                <option value="4">Nv. 5</option>
+                                                <option value="5">Nv. 6</option>
+                                                <option value="6">Nv. 7</option>
+                                                <option value="7">Nv. 8</option>
+                                                <option value="8">Nv. 9</option>
+                                                <option value="9" selected>Nv. 10</option>
+                                            </select>
+                                        </div>
+
                                         <table class="stats-table">
                                             <thead>
-                                            <tr>
-                                                <th>Atributo</th>
-                                                <th>Niv. 1</th>
-                                                <th>Niv. 10</th>
-                                            </tr>
+                                                <tr>
+                                                    <th>Atributo</th>
+                                                    <th class="cabecera-nivel-dinamica">Nv. 10</th> 
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td>algo</td>
-                                                <td>--</td>
-                                                <td>--</td>
-                                            </tr>
+                                                <tr>
+                                                    <td>Daño de Embiste (Pulsar)</td>
+                                                    <td class="valor-dinamico" data-valores="132.4%,142.3%,152.2%,165.5%,175.4%,187.0%,201.9%,216.8%,231.7%,250.2%">250.2%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Aumento de ATQ (Pulsar)</td>
+                                                    <td class="valor-dinamico" data-valores="15.0%,16.5%,18.0%,19.5%,21.0%,22.5%,24.5%,26.5%,28.5%,31.0%">31.0%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Daño Embestida Apoteósica</td>
+                                                    <td class="valor-dinamico" data-valores="176.8%,190.1%,203.3%,221.0%,234.3%,249.7%,269.6%,289.5%,309.4%,334.1%">334.1%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Daño de Filo Fluyente (Ousía)</td>
+                                                    <td class="valor-dinamico" data-valores="24.0%,25.8%,27.6%,30.0%,31.8%,33.9%,36.6%,39.3%,42.0%,45.3%">45.3%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Duración de Furia</td>
+                                                    <td class="valor-dinamico" data-valores="12.0 s,12.0 s,12.0 s,12.0 s,12.0 s,12.0 s,12.0 s,12.0 s,12.0 s,12.0 s">12.0 s</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- ==================== LUTTE: HABILIDAD DEFINITIVA ==================== -->
                             <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
-                                        <img src="Simbolos/Talentos/Lutte/Definitiva.webp">
+                                        <img src="Simbolos/Talentos/Lutte/Definitiva.webp" alt="Habilidad Definitiva">
                                     </div>
                                     <div>
-                                        <div class="talento-titulo">Monologo ahogacarcajadas</div>
+                                        <div class="talento-titulo">Monólogo ahogacarcajadas</div>
                                         <div class="talento-subtitulo">Habilidad definitiva</div>
                                     </div>
                                 </div>
 
                                 <!-- Botones para cambiar entre Descripción y Estadísticas -->
                                 <div class="talento-tabs">
-                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-definitiva')">Descripción</button>
-                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-definitiva')">Estadísticas</button>
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-definitiva-lutte')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-definitiva-lutte')">Estadísticas</button>
                                 </div>
 
                                 <!-- Contenido de las Pestañas -->
                                 <div class="talento-content">
-                                    <!-- Vista por Defecto: Descripción -->
-                                    <div id="desc-definitiva" class="tab-panel active">
-                                        <p>Realiza una patada giratoria que inflige Daño Hydro en el AdE y reduce un 40% la Res. Hydro durante 10s.</p>
+                                    <div id="desc-definitiva-lutte" class="tab-panel active">
+                                        <p>Realiza una patada giratoria que inflige Daño Hydro en el AdE y reduce un 40% la Res. Hydro de los enemigos golpeados durante 10 segundos.</p>
                                     </div>
 
-                                    <!-- Vista Oculta: Estadísticas -->
-                                    <div id="stats-definitiva" class="tab-panel">
+                                    <div id="stats-definitiva-lutte" class="tab-panel">
+                                        <!-- Selector de Nivel -->
+                                        <div class="control-nivel-talento">
+                                            <label for="selector-lutte-definitiva">Nivel de Talento: </label>
+                                            <select id="selector-lutte-definitiva" class="selector-nivel">
+                                                <option value="0">Nv. 1</option>
+                                                <option value="1">Nv. 2</option>
+                                                <option value="2">Nv. 3</option>
+                                                <option value="3">Nv. 4</option>
+                                                <option value="4">Nv. 5</option>
+                                                <option value="5">Nv. 6</option>
+                                                <option value="6">Nv. 7</option>
+                                                <option value="7">Nv. 8</option>
+                                                <option value="8">Nv. 9</option>
+                                                <option value="9" selected>Nv. 10</option>
+                                            </select>
+                                        </div>
+
                                         <table class="stats-table">
                                             <thead>
-                                            <tr>
-                                                <th>Atributo</th>
-                                                <th>Niv. 1</th>
-                                                <th>Niv. 10</th>
-                                            </tr>
+                                                <tr>
+                                                    <th>Atributo</th>
+                                                    <th class="cabecera-nivel-dinamica">Nv. 10</th> 
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td>algo</td>
-                                                <td>--</td>
-                                                <td>--</td>
-                                            </tr>
+                                                <tr>
+                                                    <td>Daño de Habilidad</td>
+                                                    <td class="valor-dinamico" data-valores="264.0%,283.8%,303.6%,330.0%,349.8%,372.9%,402.6%,432.3%,462.0%,495.0%">495.0%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Reducción de Res. Hydro</td>
+                                                    <td class="valor-dinamico" data-valores="40.0%,40.0%,40.0%,40.0%,40.0%,40.0%,40.0%,40.0%,40.0%,40.0%">40.0%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tiempo de Espera</td>
+                                                    <td class="valor-dinamico" data-valores="15.0 s,15.0 s,15.0 s,15.0 s,15.0 s,15.0 s,15.0 s,15.0 s,15.0 s,15.0 s">15.0 s</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Energía Elemental</td>
+                                                    <td class="valor-dinamico" data-valores="60,60,60,60,60,60,60,60,60,60">60</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

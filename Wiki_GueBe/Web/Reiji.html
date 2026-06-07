@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanazaki Reiji | Wiki Genshin Impact | Fandom</title>
-    <link rel="stylesheet" href="estiloHydro.css">
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
@@ -149,10 +149,11 @@
 
                             <h3 class="subsection-heading">Talentos</h3>
                             
+                            <!-- ==================== ATAQUE NORMAL ==================== -->
                             <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
-                                        <img src="Simbolos/Talentos/Reiji/Ataque.png">
+                                        <img src="Simbolos/Talentos/Reiji/Ataque.png" alt="Ataque Normal">
                                     </div>
                                     <div>
                                         <div class="talento-titulo">Estilo Kanazaki: Formación de vanguardia</div>
@@ -162,50 +163,63 @@
 
                                 <!-- Botones para cambiar entre Descripción y Estadísticas -->
                                 <div class="talento-tabs">
-                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-ataque')">Descripción</button>
-                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-ataque')">Estadísticas</button>
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-ataque-reiji')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-ataque-reiji')">Estadísticas</button>
                                 </div>
 
                                 <!-- Contenido de las Pestañas -->
                                 <div class="talento-content">
-                                    <!-- Vista por Defecto: Descripción -->
-                                    <div id="desc-ataque" class="tab-panel active">
-                                            <p><b>Ataque Normal:</b> Realiza hasta 5 ataques rápidos.</p><br>
+                                    <div id="desc-ataque-reiji" class="tab-panel active">
+                                        <p><b>Ataque Normal:</b> Realiza hasta 5 ataques rápidos.</p><br>
                                         <p><b>Ataque Cargado:</b> Consume Aguante de manera constante para realizar golpes de lanza cruzados continuos. Cuando termina el Ataque Cargado, hará un golpe aún más poderoso.</p><br>
                                         <p><b>Ataque Descendente:</b> Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.</p><br>
                                     </div>
 
-                                    <!-- Vista Oculta: Estadísticas -->
-                                    <div id="stats-ataque" class="tab-panel">
+                                    <div id="stats-ataque-reiji" class="tab-panel">
+                                        <!-- Selector de Nivel -->
+                                        <div class="control-nivel-talento">
+                                            <label for="selector-reiji-ataque">Nivel de Talento: </label>
+                                            <select id="selector-reiji-ataque" class="selector-nivel">
+                                                <option value="0">Nv. 1</option>
+                                                <option value="1">Nv. 2</option>
+                                                <option value="2">Nv. 3</option>
+                                                <option value="3">Nv. 4</option>
+                                                <option value="4">Nv. 5</option>
+                                                <option value="5">Nv. 6</option>
+                                                <option value="6">Nv. 7</option>
+                                                <option value="7">Nv. 8</option>
+                                                <option value="8">Nv. 9</option>
+                                                <option value="9" selected>Nv. 10</option>
+                                            </select>
+                                        </div>
+
                                         <table class="stats-table">
                                             <thead>
-                                            <tr>
-                                                <th>Atributo</th>
-                                                <th>Niv. 1</th>
-                                                <th>Niv. 10</th>
-                                            </tr>
+                                                <tr>
+                                                    <th>Atributo</th>
+                                                    <th class="cabecera-nivel-dinamica">Nv. 10</th> 
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td>Daño de 1er Golpe</td>
-                                                <td>48.2%</td>
-                                                <td>95.4%</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Daño de Carga</td>
-                                                <td>110%</td>
-                                                <td>220%</td>
-                                            </tr>
+                                                <tr>
+                                                    <td>Daño de 1er Golpe</td>
+                                                    <td class="valor-dinamico" data-valores="48.2%,52.1%,56.0%,61.3%,65.2%,69.7%,75.5%,81.3%,87.1%,95.4%">95.4%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Daño de Carga</td>
+                                                    <td class="valor-dinamico" data-valores="110.0%,119.2%,128.3%,140.6%,149.7%,160.4%,174.2%,187.9%,201.7%,220.0%">220%</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- ==================== HABILIDAD ELEMENTAL ==================== -->
                             <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
-                                        <img src="Simbolos/Talentos/Reiji/Elemental.png">
+                                        <img src="Simbolos/Talentos/Reiji/Elemental.png" alt="Habilidad Elemental">
                                     </div>
                                     <div>
                                         <div class="talento-titulo">Juramento del Guardián</div>
@@ -215,45 +229,67 @@
 
                                 <!-- Botones para cambiar entre Descripción y Estadísticas -->
                                 <div class="talento-tabs">
-                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-elemental')">Descripción</button>
-                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-elemental')">Estadísticas</button>
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-elemental-reiji')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-elemental-reiji')">Estadísticas</button>
                                 </div>
 
                                 <!-- Contenido de las Pestañas -->
                                 <div class="talento-content">
-                                    <!-- Vista por Defecto: Descripción -->
-                                    <div id="desc-elemental" class="tab-panel active">
-                                            <p>Reiji concentra el poder Hydro en su lanza y desata una Ola del Juramento, manifestando su voluntad de proteger el campo de batalla:</p>
-                                        <p><b>Pulsar:</b> Reiji realiza una estocada frontal que libera una Ola del Juramento hacia delante, infligiendo Daño Hydro a los enemigos alcanzados. Si en las cercanías hay más enemigos, la Ola del Juramento rebotará en ellos y les infligirá Daño Hydro. Cada enemigo solo podrá ser fijado como objetivo una vez por cada vez que se use “Juramento del Guardián”. Si la Ola del Juramento entra en contacto con un Muro de Coral, rebota una vez más, ampliando su alcance y aumentando su daño. La ola también empuja ligeramente a los enemigos golpeados.</p>
+                                    <div id="desc-elemental-reiji" class="tab-panel active">
+                                        <p>Reiji concentra el poder Hydro en su lanza y desata una Ola del Juramento, manifestando su voluntad de proteger el campo de batalla:</p><br>
+                                        <p><b>Pulsar:</b> Reiji realiza una estocada frontal que libera una Ola del Juramento hacia delante, infligiendo Daño Hydro a los enemigos alcanzados. Si en las cercanías hay más enemigos, la Ola del Juramento rebotará en ellos y les infligirá Daño Hydro. Cada enemigo solo podrá ser fijado como objetivo una vez por cada vez que se use “Juramento del Guardián”. Si la Ola del Juramento entra en contacto con un Muro de Coral, rebota una vez más, ampliando su alcance y aumentando su daño. La ola también empuja ligeramente a los enemigos golpeados.</p><br>
                                         <p><b>Mantener:</b> Reiji adopta una postura de puntería, canalizando el flujo Hydro para dirigir una Ola del Juramento de mayor tamaño en la dirección elegida. La Ola del Juramento inflige Daño Hydro continuo a los enemigos en su trayectoria y los empuja hacia atrás al impactar. Al mismo tiempo, Reiji convoca una armadura Hydro alrededor de Reiji, otorgándoles la Armadura de la Voluntad durante 20 segundos. La cantidad de absorción de daño del escudo es proporcional a la DEF Máx. de Reiji y restaura una pequeña cantidad de su Vida equivalente al 5% de la DEF de Reiji; este efecto puede activarse una vez cada 5 segundos.</p>
                                     </div>
 
-                                    <!-- Vista Oculta: Estadísticas -->
-                                    <div id="stats-elemental" class="tab-panel">
+                                    <div id="stats-elemental-reiji" class="tab-panel">
+                                        <!-- Selector de Nivel -->
+                                        <div class="control-nivel-talento">
+                                            <label for="selector-reiji-elemental">Nivel de Talento: </label>
+                                            <select id="selector-reiji-elemental" class="selector-nivel">
+                                                <option value="0">Nv. 1</option>
+                                                <option value="1">Nv. 2</option>
+                                                <option value="2">Nv. 3</option>
+                                                <option value="3">Nv. 4</option>
+                                                <option value="4">Nv. 5</option>
+                                                <option value="5">Nv. 6</option>
+                                                <option value="6">Nv. 7</option>
+                                                <option value="7">Nv. 8</option>
+                                                <option value="8">Nv. 9</option>
+                                                <option value="9" selected>Nv. 10</option>
+                                            </select>
+                                        </div>
+
                                         <table class="stats-table">
                                             <thead>
-                                            <tr>
-                                                <th>Atributo</th>
-                                                <th>Niv. 1</th>
-                                                <th>Niv. 10</th>
-                                            </tr>
+                                                <tr>
+                                                    <th>Atributo</th>
+                                                    <th class="cabecera-nivel-dinamica">Nv. 10</th> 
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td>algo</td>
-                                                <td>--</td>
-                                                <td>--</td>
-                                            </tr>
+                                                <tr>
+                                                    <td>Daño de Presión (ATQ)</td>
+                                                    <td class="valor-dinamico" data-valores="115.2%,123.8%,132.5%,144.0%,152.6%,162.7%,175.7%,188.6%,201.6%,220.4%">220.4%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Daño Continuo Mantener (ATQ)</td>
+                                                    <td class="valor-dinamico" data-valores="42.1%,45.3%,48.4%,52.6%,55.8%,59.5%,64.2%,69.0%,73.7%,80.6%">80.6%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Absorción de Escudo</td>
+                                                    <td class="valor-dinamico" data-valores="14.4% DEF + 810,15.5% DEF + 930,16.6% DEF + 1060,18.0% DEF + 1200,19.1% DEF + 1350,20.3% DEF + 1510,21.7% DEF + 1690,23.2% DEF + 1870,24.7% DEF + 2070,26.6% DEF + 2290">26.6% DEF + 2290</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- ==================== HABILIDAD DEFINITIVA ==================== -->
                             <div class="talento-container">
                                 <div class="talento-header">
                                     <div class="talento-icono">
-                                        <img src="Simbolos/Talentos/Reiji/Definitiva.png">
+                                        <img src="Simbolos/Talentos/Reiji/Definitiva.png" alt="Habilidad Definitiva">
                                     </div>
                                     <div>
                                         <div class="talento-titulo">Protección Inquebrantable</div>
@@ -263,15 +299,14 @@
 
                                 <!-- Botones para cambiar entre Descripción y Estadísticas -->
                                 <div class="talento-tabs">
-                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-definitiva')">Descripción</button>
-                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-definitiva')">Estadísticas</button>
+                                    <button class="tab-btn active" onclick="cambiarTab(event, 'desc-definitiva-reiji')">Descripción</button>
+                                    <button class="tab-btn" onclick="cambiarTab(event, 'stats-definitiva-reiji')">Estadísticas</button>
                                 </div>
 
                                 <!-- Contenido de las Pestañas -->
                                 <div class="talento-content">
-                                    <!-- Vista por Defecto: Descripción -->
-                                    <div id="desc-definitiva" class="tab-panel active">
-                                            <p>Reiji clava su lanza en el suelo, creando una onda expansiva Hydro que nace de las profundidades de la tierra. Inflige Daño Hydro de Área a todos los enemigos a los que alcanza. Tras ello, crea un Muro de Coral que se levanta abruptamente en el límite de la onda. El Muro de Coral se considera un objeto, por lo que puede escalarse o utilizarse para bloquear ataques.</p>
+                                    <div id="desc-definitiva-reiji" class="tab-panel active">
+                                        <p>Reiji clava su lanza en el suelo, creando una onda expansiva Hydro que nace de las profundidades de la tierra. Inflige Daño Hydro de Área a todos los enemigos a los que alcanza. Tras ello, crea un Muro de Coral que se levanta abruptamente en el límite de la onda. El Muro de Coral se considera un objeto, por lo que puede escalarse o utilizarse para bloquear ataques.</p><br>
                                         <p><b>Muro de Coral:</b></p>
                                         <ul>
                                             <li>Provoca constantemente a los enemigos cercanos para atraerlos y que lo ataquen.</li>
@@ -280,22 +315,45 @@
                                         </ul>
                                     </div>
 
-                                    <!-- Vista Oculta: Estadísticas -->
-                                    <div id="stats-definitiva class="tab-panel">
+                                    <div id="stats-definitiva-reiji" class="tab-panel">
+                                        <!-- Selector de Nivel -->
+                                        <div class="control-nivel-talento">
+                                            <label for="selector-reiji-definitiva">Nivel de Talento: </label>
+                                            <select id="selector-reiji-definitiva" class="selector-nivel">
+                                                <option value="0">Nv. 1</option>
+                                                <option value="1">Nv. 2</option>
+                                                <option value="2">Nv. 3</option>
+                                                <option value="3">Nv. 4</option>
+                                                <option value="4">Nv. 5</option>
+                                                <option value="5">Nv. 6</option>
+                                                <option value="6">Nv. 7</option>
+                                                <option value="7">Nv. 8</option>
+                                                <option value="8">Nv. 9</option>
+                                                <option value="9" selected>Nv. 10</option>
+                                            </select>
+                                        </div>
+
                                         <table class="stats-table">
                                             <thead>
-                                            <tr>
-                                                <th>Atributo</th>
-                                                <th>Niv. 1</th>
-                                                <th>Niv. 10</th>
-                                            </tr>
+                                                <tr>
+                                                    <th>Atributo</th>
+                                                    <th class="cabecera-nivel-dinamica">Nv. 10</th> 
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td>algo</td>
-                                                <td>--</td>
-                                                <td>--</td>
-                                            </tr>
+                                                <tr>
+                                                    <td>Daño de Habilidad</td>
+                                                    <td class="valor-dinamico" data-valores="188.4%,202.6%,216.7%,235.5%,249.6%,266.1%,287.3%,308.5%,329.7%,360.3%">360.3%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Vida de Muro de Coral</td>
+                                                    <td class="valor-dinamico" data-valores="52.0% DEF,55.9% DEF,59.8% DEF,65.0% DEF,68.9% DEF,73.5% DEF,79.3% DEF,85.2% DEF,91.0% DEF,99.5% DEF">99.5% DEF</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Duración del Muro</td>
+                                                    <!-- Atributo estático entre niveles que no cambia -->
+                                                    <td class="valor-dinamico" data-valores="15.0 s,15.0 s,15.0 s,15.0 s,15.0 s,15.0 s,15.0 s,15.0 s,15.0 s,15.0 s">15.0 s</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -366,76 +424,76 @@
   <div class="talent-card">
     <div class="talent-header"><span>1 → 2</span><span>20 000 Mora</span></div>
     <ul class="talent-materials-list">
-      <li class="material-item"><div class="material-icon-box" class="card-body quality-2"></div><span>Enseñanza de la Elegancia</span></li>
-      <li class="material-item"><div class="material-icon-box" class="card-body quality-1"></div><span>Pergamino Guía</span></li>
+      <li class="material-item"><div class="material-icon-box" class="card-body quality-2"></div><span>Enseñanza de la Luz</span></li>
+      <li class="material-item"><div class="material-icon-box" class="card-body quality-1"></div><span>Guardamano viejo</span></li>
     </ul>
   </div>
 
   <div class="talent-card">
     <div class="talent-header"><span>2 → 3</span><span>40 000 Mora</span></div>
     <ul class="talent-materials-list">
-      <li class="material-item"><div class="material-icon-box" class="card-body quality-3"></div><span>Guía de la Elegancia</span></li>
-      <li class="material-item"><div class="material-icon-box" class="card-body quality-2"></div><span>Pergamino Hechizado</span></li>
+      <li class="material-item"><div class="material-icon-box" class="card-body quality-3"></div><span>Guía de la Luz</span></li>
+      <li class="material-item"><div class="material-icon-box" class="card-body quality-2"></div><span>Guardamano gemelo</span></li>
     </ul>
   </div>
 
   <div class="talent-card">
     <div class="talent-header"><span>3 → 4</span><span>60 000 Mora</span></div>
     <ul class="talent-materials-list">
-      <li class="material-item"><div class="material-icon-box" class="card-body quality-3"></div><span>Guía de la Elegancia</span></li>
-      <li class="material-item"><div class="material-icon-box" class="card-body quality-2"></div><span>Pergamino Hechizado</span></li>
+      <li class="material-item"><div class="material-icon-box" class="card-body quality-3"></div><span>Guía de la Luz</span></li>
+      <li class="material-item"><div class="material-icon-box" class="card-body quality-2"></div><span>Guardamano gemelo</span></li>
     </ul>
   </div>
 
   <div class="talent-card">
     <div class="talent-header"><span>4 → 5</span><span>80 000 Mora</span></div>
     <ul class="talent-materials-list">
-      <li class="material-item"><div class="material-icon-box" class="card-body quality-3"></div><span>Guía de la Elegancia</span></li>
-      <li class="material-item"><div class="material-icon-box" class="card-body quality-2"></div><span>Pergamino Hechizado</span></li>
+      <li class="material-item"><div class="material-icon-box" class="card-body quality-3"></div><span>Guía de la Luz</span></li>
+      <li class="material-item"><div class="material-icon-box" class="card-body quality-2"></div><span>Guardamano gemelo</span></li>
     </ul>
   </div>
 
   <div class="talent-card">
     <div class="talent-header"><span>5 → 6</span><span>100 000 Mora</span></div>
     <ul class="talent-materials-list">
-      <li class="material-item"><div class="material-icon-box" class="card-body quality-3"></div><span>Guía de la Elegancia</span></li>
-      <li class="material-item"><div class="material-icon-box" class="card-body quality-2"></div><span>Pergamino Hechizado</span></li>
+      <li class="material-item"><div class="material-icon-box" class="card-body quality-3"></div><span>Guía de la Luz</span></li>
+      <li class="material-item"><div class="material-icon-box" class="card-body quality-2"></div><span>Pergamino gemelo</span></li>
     </ul>
   </div>
 
   <div class="talent-card">
     <div class="talent-header"><span>6 → 7</span><span>120 000 Mora</span></div>
     <ul class="talent-materials-list">
-      <li class="material-item" quality="4"><div class="material-icon-box" class="card-body quality-4"></div><span>Filosofía de la Elegancia</span></li>
-      <li class="material-item" quality="3"><div class="material-icon-box" class="card-body quality-3"></div><span>Pergamino Hechizado</span></li>
-      <li class="material-item" quality="5"><div class="material-icon-box" class="card-body quality-5"></div><span>Atadura del demente</span></li>
+      <li class="material-item" quality="4"><div class="material-icon-box" class="card-body quality-4"></div><span>Filosofía de la Luz</span></li>
+      <li class="material-item" quality="3"><div class="material-icon-box" class="card-body quality-3"></div><span>Guardamano célebre</span></li>
+      <li class="material-item" quality="5"><div class="material-icon-box" class="card-body quality-5"></div><span>Muestra ascendida: Torre</span></li>
     </ul>
   </div>
 
   <div class="talent-card">
     <div class="talent-header"><span>7 → 8</span><span>260 000 Mora</span></div>
     <ul class="talent-materials-list">
-      <li class="material-item" quality="4"><div class="material-icon-box" class="card-body quality-4"></div><span>Filosofía de la Elegancia</span></li>
-      <li class="material-item" quality="3"><div class="material-icon-box" class="card-body quality-3"></div><span>Pergamino Hechizado</span></li>
-      <li class="material-item" quality="5"><div class="material-icon-box" class="card-body quality-5"></div><span>Atadura del demente</span></li>
+      <li class="material-item" quality="4"><div class="material-icon-box" class="card-body quality-4"></div><span>Filosofía de la Luz</span></li>
+      <li class="material-item" quality="3"><div class="material-icon-box" class="card-body quality-3"></div><span>Guardamano célebre</span></li>
+      <li class="material-item" quality="5"><div class="material-icon-box" class="card-body quality-5"></div><span>Muestra ascendida: Torre</span></li>
     </ul>
   </div>
 
   <div class="talent-card">
     <div class="talent-header"><span>8 → 9</span><span>450 000 Mora</span></div>
     <ul class="talent-materials-list">
-      <li class="material-item" quality="4"><div class="material-icon-box" class="card-body quality-4"></div><span>Filosofía de la Elegancia</span></li>
-      <li class="material-item" quality="3"><div class="material-icon-box" class="card-body quality-3"></div><span>Pergamino Hechizado</span></li>
-      <li class="material-item" quality="5"><div class="material-icon-box" class="card-body quality-5"></div><span>Atadura del demente</span></li>
+      <li class="material-item" quality="4"><div class="material-icon-box" class="card-body quality-4"></div><span>Filosofía de la Luz</span></li>
+      <li class="material-item" quality="3"><div class="material-icon-box" class="card-body quality-3"></div><span>Guardamano célebre</span></li>
+      <li class="material-item" quality="5"><div class="material-icon-box" class="card-body quality-5"></div><span>Muestra ascendida: Torre</span></li>
     </ul>
   </div>
 
   <div class="talent-card">
     <div class="talent-header"><span>9 → 10</span><span>700 000 Mora</span></div>
     <ul class="talent-materials-list">
-      <li class="material-item" quality="4"><div class="material-icon-box" class="card-body quality-4"></div><span>Filosofía de la Elegancia</span></li>
-      <li class="material-item" quality="3"><div class="material-icon-box" class="card-body quality-3"></div><span>Pergamino Hechizado</span></li>
-      <li class="material-item" quality="5"><div class="material-icon-box" class="card-body quality-5"></div><span>Atadura del demente</span></li>
+      <li class="material-item" quality="4"><div class="material-icon-box" class="card-body quality-4"></div><span>Filosofía de la Luz</span></li>
+      <li class="material-item" quality="3"><div class="material-icon-box" class="card-body quality-3"></div><span>Guardamano célebre</span></li>
+      <li class="material-item" quality="5"><div class="material-icon-box" class="card-body quality-5"></div><span>Muestra ascendida: Torre</span></li>
       <li class="material-item" quality="5"><div class="material-icon-box" class="card-body quality-5"></div><span>Co­ro­na de la sa­bi­du­rí­a</span></li>
     </ul>
   </div>
@@ -565,45 +623,45 @@
                                         <tbody>
                                             <tr>
                                             <td>1</td><td>20</td><td>20,000</td>
-                                            <td><div class="card-container"><div class="card-body quality-2"><img src="" class="icono_ascension"><span class="card-text">1</span></div><div class="card-caption">Pedacito esmeralda nagadus</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-2"><img src="" class="icono_ascension"><span class="card-text">1</span></div><div class="card-caption">Pedacito lazurita varunada</div></div></td>
                                             <td>Ninguno</td>
-                                            <td><div class="card-container"><div class="card-body quality-1"><img src="" class="icono_ascension"><span class="card-text">3</span></div><div class="card-caption">Dendobio</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-1"><img src="" class="icono_ascension"><span class="card-text">3</span></div><div class="card-caption">Pergamino guía</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-1"><img src="" class="icono_ascension"><span class="card-text">3</span></div><div class="card-caption">Médula cristalizada</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-1"><img src="" class="icono_ascension"><span class="card-text">3</span></div><div class="card-caption">Guardamano viejo</div></div></td>
                                             </tr>
                                             <tr>
                                             <td>2</td><td>40</td><td>40,000</td>
-                                            <td><div class="card-container"><div class="card-body quality-3"><img src="" class="icono_ascension"><span class="card-text">3</span></div><div class="card-caption">Fragmento esmeralda nagadus</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-4"><img src="" class="icono_ascension"><span class="card-text">2</span></div><div class="card-caption">Nimboescamas</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-1"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/3d/Objeto_Fruto_amakumo.png" width="80" height="80"><span class="card-text">10</span></div><div class="card-caption">Dendobio</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-1"><img src="https://static.wikia.nocookie.net/gen-impact/images/7/7a/Objeto_Caparaz%C3%B3n_espectral.png" width="80" height="80"><span class="card-text">15</span></div><div class="card-caption">Pergamino guía</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-3"><img src="" class="icono_ascension"><span class="card-text">3</span></div><div class="card-caption">Fragmento lazurita varunada</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-4"><img src="" class="icono_ascension"><span class="card-text">2</span></div><div class="card-caption">Corazón de la eternidad</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-1"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/3d/Objeto_Fruto_amakumo.png" width="80" height="80"><span class="card-text">10</span></div><div class="card-caption">Médula cristalizada</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-1"><img src="https://static.wikia.nocookie.net/gen-impact/images/7/7a/Objeto_Caparaz%C3%B3n_espectral.png" width="80" height="80"><span class="card-text">15</span></div><div class="card-caption">Guardamano gemelo</div></div></td>
                                             </tr>
                                             <tr>
                                             <td>3</td><td>50</td><td>60,000</td>
-                                            <td><div class="card-container"><div class="card-body quality-3"><img src="https://static.wikia.nocookie.net/gen-impact/images/2/21/Objeto_Fragmento_de_esmeralda_nagadus.png" width="80" height="80"><span class="card-text">6</span></div><div class="card-caption">Fragmento esmeralda nagadus</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-4"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/33/Objeto_Aro_sombrioeterno.png" width="80" height="80"><span class="card-text">4</span></div><div class="card-caption">Nimboescamas</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-1"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/3d/Objeto_Fruto_amakumo.png" width="80" height="80"><span class="card-text">20</span></div><div class="card-caption">Dendobio</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-2"><img src="https://static.wikia.nocookie.net/gen-impact/images/4/47/Objeto_Coraz%C3%B3n_espectral.png" width="80" height="80"><span class="card-text">12</span></div><div class="card-caption">Pergamino hechizado</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-3"><img src="https://static.wikia.nocookie.net/gen-impact/images/2/21/Objeto_Fragmento_de_esmeralda_nagadus.png" width="80" height="80"><span class="card-text">6</span></div><div class="card-caption">Fragmento lazurita varunada</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-4"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/33/Objeto_Aro_sombrioeterno.png" width="80" height="80"><span class="card-text">4</span></div><div class="card-caption">Corazón de la eternidad</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-1"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/3d/Objeto_Fruto_amakumo.png" width="80" height="80"><span class="card-text">20</span></div><div class="card-caption">Médula cristalizada</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-2"><img src="https://static.wikia.nocookie.net/gen-impact/images/4/47/Objeto_Coraz%C3%B3n_espectral.png" width="80" height="80"><span class="card-text">12</span></div><div class="card-caption">Guardamano gemelo</div></div></td>
                                             </tr>
                                             <tr>
                                             <td>4</td><td>60</td><td>80,000</td>
-                                            <td><div class="card-container"><div class="card-body quality-4"><img src="https://static.wikia.nocookie.net/gen-impact/images/f/fc/Objeto_Trozo_de_esmeralda_nagadus.png" width="80" height="80"><span class="card-text">3</span></div><div class="card-caption">Trozo esmeralda nagadus</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-4"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/33/Objeto_Aro_sombrioeterno.png" width="80" height="80"><span class="card-text">8</span></div><div class="card-caption">Nimboescamas</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-1"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/3d/Objeto_Fruto_amakumo.png" width="80" height="80"><span class="card-text">30</span></div><div class="card-caption">Dendobio</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-2"><img src="https://static.wikia.nocookie.net/gen-impact/images/4/47/Objeto_Coraz%C3%B3n_espectral.png" width="80" height="80"><span class="card-text">18</span></div><div class="card-caption">Pergamino hechizado</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-4"><img src="https://static.wikia.nocookie.net/gen-impact/images/f/fc/Objeto_Trozo_de_esmeralda_nagadus.png" width="80" height="80"><span class="card-text">3</span></div><div class="card-caption">Trozo lazurita varunada</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-4"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/33/Objeto_Aro_sombrioeterno.png" width="80" height="80"><span class="card-text">8</span></div><div class="card-caption">Corazón de la eternidad</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-1"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/3d/Objeto_Fruto_amakumo.png" width="80" height="80"><span class="card-text">30</span></div><div class="card-caption">Médula cristalizada</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-2"><img src="https://static.wikia.nocookie.net/gen-impact/images/4/47/Objeto_Coraz%C3%B3n_espectral.png" width="80" height="80"><span class="card-text">18</span></div><div class="card-caption">Guardamano célebre</div></div></td>
                                             </tr>
                                             <tr>
                                             <td>5</td><td>70</td><td>100,000</td>
-                                            <td><div class="card-container"><div class="card-body quality-4"><img src="https://static.wikia.nocookie.net/gen-impact/images/f/fc/Objeto_Trozo_de_esmeralda_nagadus.png" width="80" height="80"><span class="card-text">6</span></div><div class="card-caption">Trozo esmeralda nagadus</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-4"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/33/Objeto_Aro_sombrioeterno.png" width="80" height="80"><span class="card-text">12</span></div><div class="card-caption">Nimboescamas</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-1"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/3d/Objeto_Fruto_amakumo.png" width="80" height="80"><span class="card-text">45</span></div><div class="card-caption">Dendobio</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-3"><img src="https://static.wikia.nocookie.net/gen-impact/images/0/0b/Objeto_N%C3%BAcleo_espectral.png" width="80" height="80"><span class="card-text">12</span></div><div class="card-caption">Pergamino maldito</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-4"><img src="https://static.wikia.nocookie.net/gen-impact/images/f/fc/Objeto_Trozo_de_esmeralda_nagadus.png" width="80" height="80"><span class="card-text">6</span></div><div class="card-caption">Trozo lazurita varunada</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-4"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/33/Objeto_Aro_sombrioeterno.png" width="80" height="80"><span class="card-text">12</span></div><div class="card-caption">Corazón de la eternidad</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-1"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/3d/Objeto_Fruto_amakumo.png" width="80" height="80"><span class="card-text">45</span></div><div class="card-caption">Médula cristalizada</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-3"><img src="https://static.wikia.nocookie.net/gen-impact/images/0/0b/Objeto_N%C3%BAcleo_espectral.png" width="80" height="80"><span class="card-text">12</span></div><div class="card-caption">Guardamano célebre</div></div></td>
                                             </tr>
                                             <tr>
                                             <td>6</td><td>80</td><td>120,000</td>
-                                            <td><div class="card-container"><div class="card-body quality-5"><img src="https://static.wikia.nocookie.net/gen-impact/images/f/f1/Objeto_Esmeralda_nagadus.png" width="80" height="80"><span class="card-text">6</span></div><div class="card-caption">Esmeralda nagadus</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-4"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/33/Objeto_Aro_sombrioeterno.png" width="80" height="80"><span class="card-text">20</span></div><div class="card-caption">Nimboescamas</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-1"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/3d/Objeto_Fruto_amakumo.png" width="80" height="80"><span class="card-text">60</span></div><div class="card-caption">Dendobio</div></div></td>
-                                            <td><div class="card-container"><div class="card-body quality-3"><img src="https://static.wikia.nocookie.net/gen-impact/images/0/0b/Objeto_N%C3%BAcleo_espectral.png" width="80" height="80"><span class="card-text">24</span></div><div class="card-caption">Pergamino maldito</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-5"><img src="https://static.wikia.nocookie.net/gen-impact/images/f/f1/Objeto_Esmeralda_nagadus.png" width="80" height="80"><span class="card-text">6</span></div><div class="card-caption">Lazurita varunada</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-4"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/33/Objeto_Aro_sombrioeterno.png" width="80" height="80"><span class="card-text">20</span></div><div class="card-caption">Corazón de la eternidad</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-1"><img src="https://static.wikia.nocookie.net/gen-impact/images/3/3d/Objeto_Fruto_amakumo.png" width="80" height="80"><span class="card-text">60</span></div><div class="card-caption">Médula cristalizada</div></div></td>
+                                            <td><div class="card-container"><div class="card-body quality-3"><img src="https://static.wikia.nocookie.net/gen-impact/images/0/0b/Objeto_N%C3%BAcleo_espectral.png" width="80" height="80"><span class="card-text">24</span></div><div class="card-caption">Guardamano célebre</div></div></td>
                                             </tr>
                                             <tr>
                                             <td>Máx</td><td>90</td><td colspan="5">Nivel máximo</td>
@@ -825,17 +883,17 @@
                             <div class="card-dual-row">
                                 <div class="dual-cell">
                                     <span class="cell-label">Rareza</span>
-                                    <span class="cell-value stars">[★ Estrellas]</span>
+                                    <span class="cell-value stars">★★★★</span>
                                 </div>
                                 <div class="dual-cell border-left">
                                     <span class="cell-label">Arma</span>
-                                    <span class="cell-value text-link"><img src="Simbolos/Armas/Lanza.webp" class="icono_pq">Espada</span>
+                                    <span class="cell-value text-link"><img src="Simbolos/Armas/Lanza.webp" class="icono_pq">Lanza</span>
                                 </div>
                             </div>
 
                             <div class="card-single-row">
                                 <span class="cell-label central-label">Visión</span>
-                                <span class="cell-value vision-element"><img src="Simbolos/Elementos/Hydro.webp" class="icono_pq">Dendro</span>
+                                <span class="cell-value vision-element"><img src="Simbolos/Elementos/Hydro.webp" class="icono_pq">Hydro</span>
                             </div>
 
                             <div class="card-section-title">Información general</div>

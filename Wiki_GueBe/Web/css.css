@@ -1,33 +1,25 @@
 /* ==========================================================================
    VARIABLES
    ========================================================================== */
-/* ==========================================================================
-   VARIABLES
-   ========================================================================== */
-/* Configuración base por defecto (Neutral / Sin Elemento) */
 :root {
-    --color-elemento: #b1b1b1;
+    --color-elemento: #5b5868;
     --fondo: url("Simbolos/Fondo/Irminsul.webp");
 }
 
-/* 
-   Forzamos a que el body (y cualquier clase de elemento) recalcule 
-   las mezclas de color en tiempo real usando el --color-elemento activo.
-*/
 body {
-    --color-oscuro: color-mix(in srgb, var(--color-elemento), black 30%);    
-    --color-tabla-borde: color-mix(in srgb, var(--color-elemento), black 50%);
-    --color-tabla-dentro: color-mix(in srgb, var(--color-elemento), #1a1a1a 85%);
+    --color-oscuro: color-mix(in srgb, var(--color-elemento), black 25%);
+    --color-tabla-dentro: color-mix(in srgb, var(--color-elemento), #1a1a1a 75%);
+    --color-tabla-borde: color-mix(in srgb, var(--color-elemento), black 40%);
 }
 
 /* Modificadores de color según el elemento detectado por JS */
-body.elemento-pyro    { --color-elemento: #-; }
-body.elemento-hydro   { --color-elemento: #2c387e; }
-body.elemento-anemo   { --color-elemento: #-; }
-body.elemento-electro { --color-elemento: #-; }
-body.elemento-dendro  { --color-elemento: #6c8c44; }
-body.elemento-cryo    { --color-elemento: #-; }
-body.elemento-geo     { --color-elemento: #-; }
+body.elemento-pyro    { --color-elemento: #aa2e25; }
+body.elemento-hydro   { --color-elemento: #3c488d; }
+body.elemento-anemo   { --color-elemento: #0e867a; }
+body.elemento-electro { --color-elemento: #5c389b; }
+body.elemento-dendro  { --color-elemento: #739d32; }
+body.elemento-cryo    { --color-elemento: #10afc4; }
+body.elemento-geo     { --color-elemento: #c7990f; }
 
 /* ==========================================================================
    0. RESET Y CONFIGURACIÓN GENERAL (FANDOM WIKI STYLE)
@@ -41,6 +33,7 @@ body.elemento-geo     { --color-elemento: #-; }
 
 html {
     scroll-behavior: smooth;
+    
 }
 
 body {
@@ -51,7 +44,8 @@ body {
     background-attachment: fixed;
     padding-top: 70px; /* Ajusta esto a la altura de tu navbar original */
     padding-bottom: 100px;
-    color: #e2e8f0;    
+    color: #e2e8f0; 
+    padding: 20px 20px;   
 }
 
 body::before {
@@ -79,6 +73,44 @@ a:hover {
 .resaltado {
     color: #4eaaff;
 }
+
+/* ==========================================================================
+   MODIFICACIÓN EXCLUSIVA PARA LA PÁGINA DE INICIO (HTML.html)
+   ========================================================================== */
+
+/* 1. Centramos el contenedor y la tarjeta entera en la pantalla */
+body.pagina-inicio .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 20px 20px;
+}
+
+body.pagina-inicio .sidebar-area {
+    width: 100%;
+    max-width: 450px; /* Evita que la tarjeta de creadores se ensanche de más */
+    margin: 0 auto;
+}
+
+body.pagina-inicio .sticky-sidebar {
+    position: static; /* Desactiva el modo pegajoso que ya no hace falta */
+}
+
+/* 2. Centramos las filas y las casillas individuales */
+body.pagina-inicio .card-dual-row {
+    justify-content: center; /* Centra las casillas horizontalmente si no ocuparan todo el ancho */
+}
+
+body.pagina-inicio .dual-cell {
+    display: flex;
+    flex-direction: column;  /* Alinea el contenido en vertical (Nombre -> Elemento -> Estrellas) */
+    justify-content: center; /* Centrado vertical interno */
+    align-items: center;     /* Centrado horizontal interno */
+    text-align: center;      /* Fuerza el texto a alinearse al centro */
+    padding: 15px 10px;      /* Un poco de espacio interno para que luzca limpio */
+}
+
 
 /* ==========================================================================
    1. ICONOS
@@ -127,11 +159,13 @@ a:hover {
 }
 
 /* ==========================================================================
-   2. BARRA DE NAVEGACIÓN SUPERIOR (STICKY)
+   2. BARRA DE NAVEGACIÓN SUPERIOR (CON BUSCADOR WIKI)
    ========================================================================== */
 .navbar {
     transition: all 0.3s ease;
     height: 70px;
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
 }
 
 .navbar.scrolled {
@@ -149,6 +183,8 @@ a:hover {
 
 .nav-container {
     max-width: 1280px;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    padding: 0 20px; /* Margen interno para que no pegue a los bordes de la pantalla */
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -162,6 +198,7 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-shrink: 0; /* Evita que el logo se deforme si la pantalla se achica */
 }
 
 .sub-logo {
@@ -170,12 +207,19 @@ a:hover {
     font-weight: normal;
 }
 
+/* Agrupación de enlaces */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
 .nav-links a {
     color: #cbd5e1;
     text-decoration: none;
     margin-left: 20px;
     font-size: 0.85rem;
     font-weight: bold;
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -190,6 +234,77 @@ a:hover {
     color: #94a3b8;
 }
 
+/* --- ELEMENTOS DEL BUSCADOR INTEGRADO --- */
+
+/* Contenedor principal del buscador */
+.buscador-container {
+    position: relative;
+    max-width: 250px;
+    width: 100%;
+    margin-left: 30px; /* Separación con los enlaces del menú */
+}
+
+/* El cuadro de texto (Input) */
+#buscador-wiki {
+    width: 100%;
+    padding: 6px 14px;
+    background-color: #1c1c1e;
+    border: 1px solid #3a3a3c;
+    border-radius: 20px; /* Estilo píldora moderna */
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto Focus (Al hacer clic para escribir) */
+#buscador-wiki:focus {
+    border-color: #ffd700; /* Dorado brillante Genshin */
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+    background-color: #242426;
+}
+
+/* Texto de sugerencia de fondo (Placeholder) */
+#buscador-wiki::placeholder {
+    color: #7a7a7f;
+    font-style: italic;
+}
+
+/* Contenedor flotante de sugerencias */
+.sugerencias-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1e1e28; /* Fondo oscuro a juego con la interfaz */
+    border: 1px solid #3f3f5a;
+    border-radius: 0 0 6px 6px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 9999 !important; /* Por encima de títulos y pestañas */
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+}
+
+/* Cada ítem de sugerencia */
+.sugerencia-item {
+    color: #c0c0d5;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Efecto hover al pasar el ratón */
+.sugerencia-item:hover {
+    background-color: #2a2a3a;
+    color: #ffffff; /* Cambia al color primario de tu web */
+}
+
+/* Estilo por si el usuario escribe algo que no existe */
+.sugerencia-item.sin-resultados {
+    color: #7a7a7f;
+    cursor: default;
+    font-style: italic;
+}
+
 /* ==========================================================================
    3. ESTRUCTURA DE LA PÁGINA (GRID DE DOS COLUMNAS)
    ========================================================================== */
@@ -201,7 +316,7 @@ a:hover {
     gap: 30px;
     max-width: 1280px;
     margin: 20px auto;
-    padding: 0 20px;
+    padding: 40px 20px;
     align-items: start;
 }
 
@@ -322,6 +437,7 @@ a:hover {
 .summary-box {
     background-color: #111622;
     border: 1px solid #1e293b;
+    border-left: 3px solid #4a86f7;
     padding: 15px;
     width: 100%;
     max-width: 380px;
@@ -650,26 +766,38 @@ forzando que los paneles ocultos no ocupen espacio */
     background-color: var(--color-tabla-dentro);
     color: #ffffff;
     font-family: sans-serif;
-    border: 1px solid var(--color-tabla-borde);
+    border: 1.5px solid var(--color-tabla-borde);
     width: 100%; /* Asegura consistencia */
 }
 
 .wikitable th {
-    background-color: var(--color-oscuro); /* Cambiado de var(--color-tabla-borde) a var(--color-oscuro) */
+    background-color: var(--color-oscuro);
     padding: 10px;
-    border: 1px solid var(--color-tabla-borde);
+    border: 1.5px solid var(--color-tabla-borde);
 }
 
 .wikitable td {
     padding: 8px;
-    border: 1px solid var(--color-tabla-borde);
+    border: 1.5px solid var(--color-tabla-borde);
     vertical-align: middle;
 }
 
 .table-responsive {
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* Para suavizar el scroll en iOS */
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 15px; /* Margen de seguridad */
+}
+
+/* Animación de entrada suave para los paneles de talento */
+.tab-panel.active {
+    display: block !important;
+    animation: fadeInTab 0.3s ease-in-out;
+}
+
+@keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(2px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Contenedor de la tarjeta (el recuadro del ítem) */

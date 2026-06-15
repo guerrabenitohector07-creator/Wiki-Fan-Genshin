@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pétalo del Crepusculo | Wiki Genshin Impact | Fandom</title>
+    <link rel="stylesheet" href="../css.css">
+</head>
+<body>
+
+    <header id="main-header" class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="../Simbolos/Fondo/Logo Genshin.png" class="icono_genshin">
+                <a href="../../HTML.html" class="sub-logo"><b>Wiki Fan Genshin Impact</b></a>
+            </div>
+            <div class="buscador-container">
+                <input type="text" id="buscador-wiki" placeholder="Buscar personaje o arma..." autocomplete="off">
+                <div id="sugerencias-busqueda" class="sugerencias-dropdown"></div>
+            </div>            
+        </div>
+    </header>
+
+    <!-- ESTRUCTURA PRINCIPAL (GRID) -->
+    <div class="main-container">
+        
+        <!-- COLUMNA IZQUIERDA: CONTENIDO PRINCIPAL -->
+        <div class="contenido-principal">
+            
+            <!-- Bloque de Introducción / Lore Inicial -->
+            <div style="background-color: var(--color-tabla-dentro); border: 1px solid var(--color-tabla-borde); padding: 15px; margin-bottom: 20px; border-radius: 4px; font-style: italic; color: #94a3b8;">
+                "[Texto de descripción oficial, trasfondo o lore introductorio del objeto/personaje. Lore textual que aparece en el juego o base de datos.]"
+            </div>
+
+            <p class="description">
+                <strong>Pétalo del Crepusculo</strong> es una <span class="resaltado">espada ligera</span> de <a href="#">Genshin Impact</a>.
+            </p>
+
+            <!-- SUMARIO INTERACTIVO (TOC) -->
+            <div class="summary-box">
+                <div class="summary-title">
+                    <span>Sumario</span>
+                    <button id="btn-summary" class="toggle-btn">[ocultar]</button>
+                </div>
+                <ul id="summary-content" class="summary-list">
+                    <li><a href="#estadisticas">1. Estadísticas</a></li>                    
+                    <li><a href="#historia">2. Historia</a></li>
+                    <li><a href="#pasivo">3. Efecto pasivo</a></li>
+                    <li><a href="#ascensión">4. Ascensiones</a></li>                    
+                </ul>
+            </div>
+
+            <!-- SECCIÓN 1: ESTADÍSTICAS -->
+            <section id="estadisticas" class="wiki-section">
+                <h2 class="section-heading">Estadísticas</h2>
+                <div class="table-container">
+                    <table class="wikitable">
+                        <thead>
+                            <tr>
+                                <th colspan="3" style="text-align: center; font-weight: bold;">Estadísticas</th>
+                            </tr>
+                            <tr>
+                                <th style="text-align: center; width: 20%;">Nivel</th>
+                                <th style="text-align: center; width: 40%;">Ataque básico</th>
+                                <th style="text-align: center; width: 40%;">Maestría elemental</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: center;"><strong>1</strong></td>
+                                <td style="text-align: center;">43</td>
+                                <td style="text-align: center;">54</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>20</strong></td>
+                                <td style="text-align: center;">122</td>
+                                <td style="text-align: center;">95</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>20★</strong></td>
+                                <td style="text-align: center;">153</td>
+                                <td style="text-align: center;">95</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>40</strong></td>
+                                <td style="text-align: center;">235</td>
+                                <td style="text-align: center;">201</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>40★</strong></td>
+                                <td style="text-align: center;">266</td>
+                                <td style="text-align: center;">201</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>50</strong></td>
+                                <td style="text-align: center;">308</td>
+                                <td style="text-align: center;">206</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>50★</strong></td>
+                                <td style="text-align: center;">340</td>
+                                <td style="text-align: center;">206</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>60</strong></td>
+                                <td style="text-align: center;">382</td>
+                                <td style="text-align: center;">246</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>60★</strong></td>
+                                <td style="text-align: center;">414</td>
+                                <td style="text-align: center;">246</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>70</strong></td>
+                                <td style="text-align: center;">457</td>
+                                <td style="text-align: center;">302</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>70★</strong></td>
+                                <td style="text-align: center;">488</td>
+                                <td style="text-align: center;">302</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>80</strong></td>
+                                <td style="text-align: center;">532</td>
+                                <td style="text-align: center;">315</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>80★</strong></td>
+                                <td style="text-align: center;">563</td>
+                                <td style="text-align: center;">315</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>90</strong></td>
+                                <td style="text-align: center;">608</td>
+                                <td style="text-align: center;">350</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 2: HISTORIA -->
+            <section id="historia" class="wiki-section">
+                <h2 class="section-heading">Historia</h2>
+                <p class="description">
+                    [Aquí va el texto completo de la historia extendida, los registros históricos o la descripción profunda del lore del objeto.]
+                </p>
+            </section>
+
+            <!-- SECCIÓN 3: EFECTO PASIVO -->
+            <section id="pasivo" class="wiki-section">
+                <h2 class="section-heading">Efecto pasivo <span class="edit-link"></span></h2>
+                
+                <div class="talento-container">
+                    <div class="talento-header">            
+                        <div>
+                            <div class="talento-titulo">Floración invertida</div>
+                            <div class="talento-subtitulo">Refinamiento de Arma</div>
+                        </div>                                   
+                    </div>
+                    <div class="talento-content">
+                        <div class="tab-panel active">
+                            
+                            <div class="control-nivel-talento">
+                                <label for="selector-pasivo">Refinamiento: </label>
+                                <select id="selector-pasivo" class="selector-nivel">
+                                    <option value="0" selected>R1</option>
+                                    <option value="1">R2</option>
+                                    <option value="2">R3</option>
+                                    <option value="3">R4</option>
+                                    <option value="4">R5</option>
+                                </select>
+                            </div>
+
+                            <table class="stats-table">
+                                <thead>
+                                    <tr>
+                                        <th>Descripción del efecto</th>
+                                        <th>Costo de refinamiento</th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="valor-dinamico" data-valores="Al usar la Habilidad Elemental, otorga 50 puntos adicionales de Maestría Elemental durante 15 s.,Al usar la Habilidad Elemental, otorga 75 puntos adicionales de Maestría Elemental durante 15 s.,Al usar la Habilidad Elemental, otorga 100 puntos adicionales de Maestría Elemental durante 15 s.,Al usar la Habilidad Elemental, otorga 125 puntos adicionales de Maestría Elemental durante 15 s.,Al usar la Habilidad Elemental, otorga 150 puntos adicionales de Maestría Elemental durante 15 s.">Al usar la Habilidad Elemental, otorga 50 puntos adicionales de Maestría Elemental durante 15 s.</td>
+                                        
+                                        <td class="valor-dinamico" data-valores="500,1.000,2.000,4.000,-">500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 4: ASCENSIONES -->
+            <section id="ascensión" class="wiki-section">
+                <h2 class="section-heading">Ascensión</h2>
+                <div class="table-responsive">
+                    <table class="wikitable">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;">Ascensión</th>
+                                <th style="text-align: center;">Nvl. Máx.</th>
+                                <th style="text-align: center;">Costo</th>
+                                <th style="text-align: center;">Material de ascensión de arma</th>
+                                <th style="text-align: center;">Material común 2</th>
+                                <th style="text-align: center;">Material común 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- FASE 1 -->
+                            <tr>
+                                <td style="text-align: center;"><strong>1</strong></td>
+                                <td style="text-align: center;">20</td>
+                                <td style="text-align: right;">20,000</td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-2">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">5</span>
+                                        </div>
+                                        <div class="card-caption">Máscara del teniente maligno</div>
+                                    </div>
+                                </td>                                
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-2">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">5</span>
+                                        </div>
+                                        <div class="card-caption">Flor encapullada de origen desconocido</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-1">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">3</span>
+                                        </div>
+                                        <div class="card-caption">Caparazón espectral</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- FASE 2 -->
+                            <tr>
+                                <td style="text-align: center;"><strong>2</strong></td>
+                                <td style="text-align: center;">40</td>
+                                <td style="text-align: right;">40,000</td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-3">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">5</span>
+                                        </div>
+                                        <div class="card-caption">Máscara del mordisco de tigre</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-2">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">18</span>
+                                        </div>
+                                        <div class="card-caption">Flor encapullada de origen desconocido</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-1">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">12</span>
+                                        </div>
+                                        <div class="card-caption">Caparazón espectral</div>
+                                    </div>
+                                </td>  
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>3</strong></td>
+                                <td style="text-align: center;">50</td>
+                                <td style="text-align: right;">30,000</td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-3">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">9</span>
+                                        </div>
+                                        <div class="card-caption">Máscara del mordisco de tigre</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-3">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">9</span>
+                                        </div>
+                                        <div class="card-caption">Flor velada</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-2">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">9</span>
+                                        </div>
+                                        <div class="card-caption">Corazón espectral</div>
+                                    </div>
+                                </td>  
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>4</strong></td>
+                                <td style="text-align: center;">60</td>
+                                <td style="text-align: right;">45,000</td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-4">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">5</span>
+                                        </div>
+                                        <div class="card-caption">Máscara del cuerno</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-3">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">18</span>
+                                        </div>
+                                        <div class="card-caption">Flor velada</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-2">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">14</span>
+                                        </div>
+                                        <div class="card-caption">Corazón espectral</div>
+                                    </div>
+                                </td>  
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>5</strong></td>
+                                <td style="text-align: center;">70</td>
+                                <td style="text-align: right;">55,000</td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-4">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">9</span>
+                                        </div>
+                                        <div class="card-caption">Máscara del cuerno</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-4">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">14</span>
+                                        </div>
+                                        <div class="card-caption">Flor floreciente del trashumante</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-3">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">3</span>
+                                        </div>
+                                        <div class="card-caption">Núclelo espectral</div>
+                                    </div>
+                                </td>  
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><strong>6</strong></td>
+                                <td style="text-align: center;">80</td>
+                                <td style="text-align: right;">55,000</td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-5">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">6</span>
+                                        </div>
+                                        <div class="card-caption">Máscara fantasmagórica</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-4">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">27</span>
+                                        </div>
+                                        <div class="card-caption">Flor floreciente del trashumante</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card-container">
+                                        <div class="card-body quality-3">
+                                            <img src="Ruta/Icono.png" class="icono_ascension">
+                                            <span class="card-text">18</span>
+                                        </div>
+                                        <div class="card-caption">Núclelo espectral</div>
+                                    </div>
+                                </td>  
+                            </tr>
+                            
+                            <!-- FILA FINAL LÍMITE MAXIMO -->
+                            <tr>
+                                <td style="text-align: center;"><strong>Máx</strong></td>
+                                <td style="text-align: center;">90</td>
+                                <td colspan="5" style="text-align: center; font-style: italic; color: #94a3b8;">Nivel máximo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- COLUMNA DERECHA: INFOBOX LATERAL DE FANDOM -->
+        <div class="sidebar-area">
+            <div class="info-card">
+                <div class="card-header-main">Pétalo del Crepusculo</div>
+                
+                <div class="card-media-tabs">
+                    <span class="tab-btn active" data-media="normal">Normal</span>
+                    <span class="tab-btn" data-media="ascension">Ascensión</span>
+                </div>
+
+                <div class="card-image-wrapper">
+                    <div id="media-normal" class="media-content active">
+                        <div class="char-art-placeholder generic-bg">
+                            <div class="art-arma"><img src="Arma.png" alt="Arma"></div>
+                            <span class="copyright-tag">© GUE_BE</span>
+                        </div>
+                    </div>
+                    <div id="media-ascension" class="media-content">                        
+                        <div class="char-art-placeholder generic-bg">
+                            <div class="art-arma"><img src="Arma_Ascendida.png" alt="Arma Ascendida"></div>
+                            <span class="copyright-tag">© GUE_BE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-section-title">Información general</div>
+                
+                <div class="detail-item">
+                    <span class="detail-label">Tipo</span>
+                    <span class="detail-value text-white">Espada</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Rareza</span>
+                    <span class="cell-value stars">★★★★★</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Obtención</span>
+                    <span class="detail-value vision-element"><a href="#" class="text-link">Gachapón</a></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Versión de lanzamiento</span>
+                    <span class="detail-value text-white">Versión [X.X]</span>
+                </div>
+
+                <div class="card-section-title">Estadísticas base</div>
+                
+                <div class="detail-item">
+                    <span class="detail-label">Ataque base (Nvl. 1)</span>
+                    <span class="detail-value text-white">43</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Tipo de stat secundario</span>
+                    <span class="detail-value text-white"></span>Maestría Elemental</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Stat secundario base (Nvl. 1)</span>
+                    <span class="detail-value text-white">55</span>
+                </div>
+
+                <div class="card-section-title">Efectos pasivos</div>
+                <div class="detail-item no-border">
+                    <span class="detail-label">Nombre</span>
+                    <span class="detail-value text-white">Floración invertida</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../Zscript.js"></script>
+</body>
+</html>
